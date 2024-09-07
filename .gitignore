@@ -1,2 +1,3 @@
 ADS_Labs
-.vs_code
+.vscode
+__pycache__
