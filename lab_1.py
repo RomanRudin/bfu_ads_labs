@@ -1,5 +1,5 @@
 # Creating a dictionary of opnening and their closing brackets
-brackets_info = {
+BRACKETS_INFO = {
     ")": "(",
     "]": "[",
     "}": "{"
@@ -14,14 +14,14 @@ def printing_errors(string: str, position: int, print_correctness: bool, text="I
             print(text)
 
 # I remember, that in Python code in fucntions works a bit faster, but I don't remrember why
-def check_brackets(brackets: str, brackets_info: dict, print_correctness=True, print_errors=True, accept_num=False, accept_alpha=False) -> bool: 
+def check_brackets(brackets: str, BRACKETS_INFO: dict, print_correctness=True, print_errors=True, accept_num=False, accept_alpha=False) -> bool: 
     import queue
     lifo = queue.LifoQueue()
     for position, bracket in enumerate(brackets):
-        if bracket in brackets_info.values():
+        if bracket in BRACKETS_INFO.values():
             lifo.put(bracket)
-        elif bracket in brackets_info.keys():
-            if (lifo.empty()) or (brackets_info[bracket] != lifo.get()):
+        elif bracket in BRACKETS_INFO.keys():
+            if (lifo.empty()) or (BRACKETS_INFO[bracket] != lifo.get()):
                 if print_errors: printing_errors(brackets, position, print_correctness)
                 return False
         else:
@@ -42,4 +42,4 @@ def check_brackets(brackets: str, brackets_info: dict, print_correctness=True, p
 
 # Main code
 #brackets = input("Пожалуйста, введите строку: ")
-#check_brackets(brackets, brackets_info)
+#check_brackets(brackets, BRACKETS_INFO)фс
