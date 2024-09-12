@@ -13,6 +13,7 @@ PRIORITY = {
 
 def tokenize(expression: str) -> list[str]:
     expression.replace(" ", "")
+    expression.replace("=", "")
     if not check_brackets(expression, {")":"("}, print_correctness=False, accept_num=True):
         raise SyntaxError("")
     for sym in PRIORITY.keys():
@@ -26,17 +27,17 @@ def evaluate(tokens: list[str]) -> float:
     if token not in "+-*/": 
       stack.put(float(token)) 
     else: 
-      right = stack.get() 
-      left = stack.get() 
-      if token == '+': 
-        stack.put(left + right) 
-      elif token == '-': 
-        stack.put(left - right) 
-      elif token == '*': 
-        stack.put(left * right) 
-      elif token == '/': 
-        assert right != 0
-        stack.put(left / right) 
+      right, left = stack.get(), stack.get() 
+      match token:
+        case'+': 
+          stack.put(left + right) 
+        case '-': 
+          stack.put(left - right) 
+        case '*': 
+          stack.put(left * right) 
+        case '/': 
+          assert right != 0
+          stack.put(left / right) 
   return stack.get() 
 
 # Converts infix notation to RPN by known algorythm
