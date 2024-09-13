@@ -1,9 +1,7 @@
-# Check insertion sort firstly
-
-def insertion_sort(array):
-    for i in range(1, len(array)):
+def insertion_sort(arr) -> list:
+    for i in range(1, len(arr)):
         j = i
-        while j > 0 and array[j] < array[j - 1]:
-            array[j], array[j - 1] = array[j - 1], array[j]
+        while j > 0 and arr[j] < arr[j - 1]:
+            arr[j], arr[j - 1] = arr[j - 1], arr[j]
             j -= 1
-    return array
+    return arr

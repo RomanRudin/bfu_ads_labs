@@ -1,5 +1,5 @@
 #Using cide from previous lab we can check if user input is correct in sense of correct brackets:
-from ..Lab1.lab_1 import check_brackets
+from Lab1.lab_1 import check_brackets
 from queue import LifoQueue, Queue
 PRIORITY = {
    "start": 0,
@@ -70,5 +70,3 @@ def convert(tokens: list[str]) -> list[str]:
     temporary_stack.reverse()
     result.extend(temporary_stack)
     return result
-
-print(evaluate(convert(tokenize(input("Please, enter the expression: ")))))
