@@ -53,7 +53,7 @@ def testing_sorting(function: callable, show_results=True, testing_amount=10000,
             return False
     if show_results:
         print(bcolors.OKGREEN + "Premade tests passed!" + bcolors.ENDC)
-        print(bcolors.OKBLUE + "Running random tests!" + bcolors.ENDC)
+        print(bcolors.OKBLUE + "Running random tests..." + bcolors.ENDC)
     for _ in range(testing_amount):
         test = [randint(-min_max_elem, min_max_elem) for _ in range(randint(2, max_len))]
         expected_result = sorted(test)
