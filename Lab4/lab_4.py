@@ -1,6 +1,6 @@
 # Check https://thecode.media/comb-sort/ firstly
 
-def comb_sort(arr) -> list:
+def comb_sort(arr: list) -> list:
     shrink = 1.247
     gapFactor = len(arr) / shrink
     while gapFactor > 1:

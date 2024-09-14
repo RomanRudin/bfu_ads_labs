@@ -12,33 +12,13 @@ PRIORITY = {
 }
 
 def tokenize(expression: str) -> list[str]:
-    expression.replace(" ", "")
-    expression.replace("=", "")
-    if not check_brackets(expression, {")":"("}, print_correctness=False, accept_num=True):
-        raise SyntaxError("")
+    expression = expression.replace(" ", "")
+    expression = expression.removesuffix("=")
+    if not check_brackets(expression, {")":"("}, print_correctness=True, accept_num=True):
+        raise SyntaxError()
     for sym in PRIORITY.keys():
         expression = expression.replace(str(sym), f" {sym} ")
     return expression.split()
-
-# Using reversed Polish notation (RPN) algorithm:
-def evaluate(tokens: list[str]) -> float: 
-  stack = LifoQueue()
-  for token in tokens: 
-    if token not in "+-*/": 
-      stack.put(float(token)) 
-    else: 
-      right, left = stack.get(), stack.get() 
-      match token:
-        case'+': 
-          stack.put(left + right) 
-        case '-': 
-          stack.put(left - right) 
-        case '*': 
-          stack.put(left * right) 
-        case '/': 
-          assert right != 0
-          stack.put(left / right) 
-  return stack.get() 
 
 # Converts infix notation to RPN by known algorythm
 def convert(tokens: list[str]) -> list[str]:
@@ -70,3 +50,23 @@ def convert(tokens: list[str]) -> list[str]:
     temporary_stack.reverse()
     result.extend(temporary_stack)
     return result
+
+# Using reversed Polish notation (RPN) algorithm:
+def evaluate(tokens: list[str]) -> float: 
+  stack = LifoQueue()
+  for token in tokens: 
+    if token not in "+-*/": 
+      stack.put(float(token)) 
+    else: 
+      right, left = stack.get(), stack.get() 
+      match token:
+        case'+': 
+          stack.put(left + right) 
+        case '-': 
+          stack.put(left - right) 
+        case '*': 
+          stack.put(left * right) 
+        case '/': 
+          assert right != 0
+          stack.put(left / right) 
+  return stack.get() 
