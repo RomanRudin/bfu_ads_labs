@@ -1,2 +1,2 @@
-def _sort(arr:list) -> list:
+def external_merge_sort(arr:list) -> list:
     pass
