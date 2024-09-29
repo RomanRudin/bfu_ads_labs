@@ -32,6 +32,7 @@ bool checkBrackets(std::string input) {
         case '}':
             if ((stack.empty()) || (stack.top() != '{')) {
                 std::cout << "The answer: false" << std::endl;
+                std::cout << "Reason: bracket " << stack.top() << " was never closed" << std::endl;
                 return false;
             }
             else 
@@ -57,4 +58,5 @@ int main() {
     std::string input;
     std::cout << "Please, enter brackets: " << std::endl;
     std::cin >> input;
+    checkBrackets(input);
 }
