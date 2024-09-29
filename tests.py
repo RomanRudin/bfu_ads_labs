@@ -31,7 +31,7 @@ def timer(func) -> callable:
     return wrapper
 
 # Automatic tester for sorting algorythms
-def testing_sorting(function: callable, show_results=True, testing_amount=10000, max_len=100, min_max_elem=100) -> bool:
+def testing_sorting(function: callable, show_results=True, testing_amount=10000, max_len=100, min_max_elem=100, external_sort=False) -> bool:
     if show_results:
         print(bcolors.OKBLUE + "Testing sorting algorythms..." + bcolors.ENDC)
     time_stamps = []
