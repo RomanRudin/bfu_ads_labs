@@ -4,7 +4,7 @@ import random
 
 TEMP_FILES_PATH = "Lab12/temp_files/"
 
-def merge_files(output_file, temp_files_counter):
+def merge_files(output_file, temp_files_counter) -> None:
     heap_array = []
     temp_files = [open(TEMP_FILES_PATH + str(i) + '.txt', 'r', encoding="utf-8")  for i in range(temp_files_counter)]
     with open(output_file, "w") as output:
@@ -56,12 +56,12 @@ def create_initial_runs(input_file, run_size) -> int:
     return temp_files_counter
 
 
-def sort(input_file, output_file, run_size):
+def sort(input_file, output_file, run_size) -> None:
     temp_files_counter = create_initial_runs(input_file, run_size)
     merge_files(output_file, temp_files_counter)
 
 
-def external_multiphase_sort():
+def external_multiphase_sort() -> None:
     num_ways = 10
     run_size = 1000
 
