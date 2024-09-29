@@ -56,28 +56,21 @@ def create_initial_runs(input_file, run_size) -> int:
     return temp_files_counter
 
 
-def external_multiphase_sort(input_file, output_file, run_size):
+def sort(input_file, output_file, run_size):
     temp_files_counter = create_initial_runs(input_file, run_size)
     merge_files(output_file, temp_files_counter)
 
 
-def main():
-    # No. of Partitions of input file.
+def external_multiphase_sort():
     num_ways = 10
-
-    # The size of each partition
     run_size = 1000
 
     input_file = "Lab12/Data/input.txt"
     output_file = "Lab12/Data/output.txt"
 
-    # generate input
+    # Instead of testing system right now i'm using this:
     with open(input_file, 'w') as f:
         for _ in range(num_ways * run_size):
             f.write(str(random.randint(0, 10000)) + '\n')
 
-    external_multiphase_sort(input_file, output_file, run_size)
-
-
-if __name__ == "__main__":
-    main()
+    sort(input_file, output_file, run_size)

@@ -26,7 +26,7 @@ testing_sorting(merge_sort, max_len=10000, testing_amount=20)
 print("\nQuick sort:")
 testing_sorting(quick_sort, max_len=10000, testing_amount=20)
 print("\nExternal multiphase sort:")
-testing_sorting(external_multiphase_sort, max_len=10000, testing_amount=20)
+external_multiphase_sort()
 
 
 # from Lab2.lab_2 import *
