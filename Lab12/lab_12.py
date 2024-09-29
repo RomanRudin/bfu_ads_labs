@@ -4,17 +4,6 @@ import random
 
 TEMP_FILES_PATH = "Lab12/temp_files/"
 
-class MinHeapNode:
-    def __init__(self, element, i):
-        # The element to be stored
-        self.element = element
-
-        # index of the array from which the element is taken
-        self.i = i
-
-# Merges k sorted files
-
-
 def merge_files(output_file, temp_files_counter):
     heap_array = []
     temp_files = [open(TEMP_FILES_PATH + str(i) + '.txt', 'r', encoding="utf-8")  for i in range(temp_files_counter)]
@@ -38,8 +27,6 @@ def merge_files(output_file, temp_files_counter):
         for i in range(temp_files_counter):
             temp_files[i].close()
 
-# Using a merge-sort algorithm, create the 
-# initial runs and divide them evenly among the output files
 def create_initial_runs(input_file, run_size) -> int:
     with open(input_file, 'r', encoding="utf-8") as input: 
         end_of_file = False
