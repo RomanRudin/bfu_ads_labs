@@ -61,7 +61,7 @@ def sort(input_file, output_file, run_size) -> None:
     merge_files(output_file, temp_files_counter)
 
 
-def external_multiphase_sort() -> None:
+def external_multiphase_sort():
     num_ways = 10
     run_size = 1000
 

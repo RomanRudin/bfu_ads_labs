@@ -75,3 +75,7 @@ def testing_sorting(function: callable, show_results=True, testing_amount=10000,
         print(bcolors.OKGREEN + "Tests passed!" + bcolors.ENDC)
         print(bcolors.OKBLUE + f"Average time: {sum(time_stamps) / len(time_stamps)} seconds" + bcolors.ENDC)
     return True
+
+
+def testing_external_sorting():
+    pass
