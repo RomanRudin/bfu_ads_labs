@@ -10,7 +10,9 @@ This ReadMe.md consists of:
 - [Some explanation of extra things that I made](#Explanation-extra)
  
 Labs of first semester have numeration 1-17.
+
 Labs of second semester have numeration 18-???.
+
 Currently I'm using English, but a bit later I'll use Russian, 'cause I don't care about those who doesn't know both of those languages.
 
 
@@ -144,7 +146,7 @@ Currently I'm using English, but a bit later I'll use Russian, 'cause I don't ca
 В качестве выходных данных формируется строка обхода. Например:
 ![Screenshot from file](/docs/images_for_readme/2.png)
 
-17. “Операции над БНП (бинарное дерево поиска): поиск, добавление, удаление”
+17. “Операции над БНП: поиск, добавление, удаление”
 
 Дерево вводится в программу в формате линейно-скобочной записи. Затем появляется меню, в котором доступна операция добавления, удаления и поиска вершины БДП. После выполнения операции программа должна возвращаться снова в меню. При выходе их него до завершения программы на экран должно быть выведено БДН любым способом (в виде линейно-скобочной записи или в графической форме).
 
