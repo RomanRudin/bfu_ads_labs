@@ -1,13 +1,13 @@
 from tests import testing_sorting
-from ..Lab4.lab_4 import comb_sort
-from ..Lab5.lab_5 import insertion_sort
-from ..Lab6.lab_6 import selection_sort
-from ..Lab7.lab_7 import shell_sort
-from ..Lab8.lab_8 import radix_sort
-from ..Lab9.lab_9 import heap_sort
-from ..Lab10.lab_10 import merge_sort
-from ..Lab11.lab_11 import quick_sort
-from ..Lab12.lab_12 import external_multiphase_sort
+from ..Labs.Lab4.lab_4 import comb_sort
+from ..Labs.Lab5.lab_5 import insertion_sort
+from ..Labs.Lab6.lab_6 import selection_sort
+from ..Labs.Lab7.lab_7 import shell_sort
+from ..Labs.Lab8.lab_8 import radix_sort
+from ..Labs.Lab9.lab_9 import heap_sort
+from ..Labs.Lab10.lab_10 import merge_sort
+from ..Labs.Lab11.lab_11 import quick_sort
+from ..Labs.Lab12.lab_12 import external_multiphase_sort
 
 print("\nComb sort:")
 testing_sorting(comb_sort, max_len=10000, testing_amount=20)
