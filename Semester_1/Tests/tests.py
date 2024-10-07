@@ -1,5 +1,6 @@
 from time import time
 from random import randint
+import os
 
 class bcolors:
     HEADER = '\033[95m'
@@ -19,6 +20,8 @@ PREMADE_TESTS = [
 ]
 MAX_STRING_LEN = 20
 
+
+
 # Simple timer decorator
 def timer(func) -> callable:
     def wrapper(*args, **kwargs):
@@ -30,8 +33,10 @@ def timer(func) -> callable:
         return result
     return wrapper
 
+
+
 # Automatic tester for sorting algorythms
-def testing_sorting(function: callable, show_results=True, testing_amount=10000, max_len=100, min_max_elem=100, external_sort=False) -> bool:
+def testing_sorting(function: callable, show_results=True, testing_amount=10000, max_len=100, min_max_elem=100) -> bool:
     if show_results:
         print(bcolors.OKBLUE + "Testing sorting algorythms..." + bcolors.ENDC)
     time_stamps = []
@@ -77,5 +82,55 @@ def testing_sorting(function: callable, show_results=True, testing_amount=10000,
     return True
 
 
-def testing_external_sorting():
-    pass
+
+# Special testing for external sorting
+def testing_external_sorting(function: callable, path: str, show_results=True, write_summary=True, testing_amount=10000, max_len=100, min_max_elem=100) -> bool:
+    if not os.path.exists(path):
+        raise Exception("Path does not exist!")
+    if show_results:
+        print(bcolors.OKBLUE + "Testing sorting algorythms..." + bcolors.ENDC)
+    time_stamps = []
+    for test in PREMADE_TESTS:
+        with open(path + "/input.txt", 'w', encoding="utf-8") as file:
+            file.write("\n".join(str(num) for num in test))
+        start_time = time()
+        function(path)
+        end_time = time()
+        time_stamps.append(end_time - start_time)
+        with open(path + "/output.txt", 'r', encoding="utf-8") as file:
+            result = list(map(int, file.read().split()))
+        expected_result = sorted(test)
+        if result != expected_result:
+            if show_results:
+                print(bcolors.FAIL + 'Test failed!' + bcolors.ENDC)
+                if write_summary:
+                    print(bcolors.FAIL + 'Check test_logs.txt for more info' + bcolors.ENDC)
+                    with open('test_logs.txt', 'w') as file:
+                        file.write(f'Expected \n{expected_result}\n but got \n{result}')
+            return False
+    if show_results:
+        print(bcolors.OKGREEN + "Premade tests passed!" + bcolors.ENDC)
+        print(bcolors.OKBLUE + "Running random tests..." + bcolors.ENDC)
+    for _ in range(testing_amount):
+        test = [randint(-min_max_elem, min_max_elem) for _ in range(randint(2, max_len))]
+        with open(path + "/input.txt", 'w', encoding="utf-8") as file:
+            file.write("\n".join(str(num) for num in test))
+        start_time = time()
+        function(test)
+        end_time = time()
+        time_stamps.append(end_time - start_time)
+        with open(path + "/output.txt", 'r', encoding="utf-8") as file:
+            result = list(map(int, file.read().split()))
+        expected_result = sorted(test)
+        if result != expected_result:
+            if show_results:
+                print(bcolors.FAIL + 'Test failed!' + bcolors.ENDC)
+                if write_summary:
+                    print(bcolors.FAIL + 'Check test_logs.txt for more info' + bcolors.ENDC)
+                    with open('test_logs.txt', 'w') as file:
+                        file.write(f'Expected \n{expected_result}\n but got \n{result}')
+            return False
+    if show_results:
+        print(bcolors.OKGREEN + "Tests passed!" + bcolors.ENDC)
+        print(bcolors.OKBLUE + f"Average time: {sum(time_stamps) / len(time_stamps)} seconds" + bcolors.ENDC)
+    return True

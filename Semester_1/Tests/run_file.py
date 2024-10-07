@@ -1,4 +1,4 @@
-from tests import testing_sorting
+from tests import testing_sorting, testing_external_sorting
 from ..Labs.Lab4.lab_4 import comb_sort
 from ..Labs.Lab5.lab_5 import insertion_sort
 from ..Labs.Lab6.lab_6 import selection_sort
@@ -26,8 +26,4 @@ testing_sorting(merge_sort, max_len=10000, testing_amount=20)
 print("\nQuick sort:")
 testing_sorting(quick_sort, max_len=10000, testing_amount=20)
 print("\nExternal multiphase sort:")
-external_multiphase_sort()
-
-
-# from Lab2.lab_2 import *
-# print(evaluate(convert(tokenize(input("Please, enter the equasion: ")))))
+testing_external_sorting(external_multiphase_sort(), "../Labs/Lab12/Data", max_len=10000, testing_amount=20)
