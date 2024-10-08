@@ -1,4 +1,4 @@
-from tests import testing_sorting, testing_external_sorting
+from Semester_1.Tests.sorting_tests import testing_sorting, testing_external_sorting
 from ..Labs.Lab4.lab_4 import comb_sort
 from ..Labs.Lab5.lab_5 import insertion_sort
 from ..Labs.Lab6.lab_6 import selection_sort
