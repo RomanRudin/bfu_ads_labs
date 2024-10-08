@@ -2,10 +2,10 @@ ADS_Labs
 .vscode
 __pycache__
 binary_tree_reader.py
-lab_14.py
-lab_15.py
-lab_16.py
-lab_17.py
+lab_14_test.py
+lab_15_test.py
+lab_16_test.py
+lab_17_test.py
 13_double_hashing.cpp
 hash.cpp
 lab_13_double_hashing.py
