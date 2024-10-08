@@ -185,6 +185,31 @@ Currently I'm using English, but a bit later I'll use Russian, 'cause I don't ca
 10. [Читаем](https://ru.wikipedia.org/wiki/%D0%A1%D0%BE%D1%80%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0_%D1%81%D0%BB%D0%B8%D1%8F%D0%BD%D0%B8%D0%B5%D0%BC)
 11. [Читаем](https://ru.wikipedia.org/wiki/%D0%91%D1%8B%D1%81%D1%82%D1%80%D0%B0%D1%8F_%D1%81%D0%BE%D1%80%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0)
 12. [Читаем](https://habr.com/ru/companies/otus/articles/712234/). Я этих формулировок труба шатал.
+
+Итак, у хэш-таблиц есть 2 типа обхода коллизии (Это и имеется в виду): 
+- с открытой адресацией (подразделяются на Линейное зондирование, Квадратичное зондирование и Двойное хеширование)
+
+![Open adressation method](/docs/images_for_readme/hash_table_13.png)
+
+- метод цепочек. 
+
+![Chain method](/docs/images_for_readme/hash_table_14.png)
+
+Вот, учите инглиш а затем...
+[читайте](https://op-al.gitbook.io/s-30-voprosy-i-dop.-voprosy/31.-khesh-tablicy.-kollizii.-sposoby-razresheniya-kollizii.-otkrytaya-adresaciya), 
+
+[читайте](https://medium.com/codex/hash-tables-hashing-and-collision-handling-8e4629506572), 
+
+[читайте](https://habr.com/ru/articles/509220/), 
+
+[читайте](https://algolist.ru/ds/s_has.php), 
+
+[читайте](https://habr.com/ru/articles/704724/), 
+
+[читайте](https://www.geeksforgeeks.org/program-to-implement-hash-table-using-open-addressing/), 
+
+[Линейный probing + TDD](https://realpython.com/python-hash-table/#hash-table-vs-dictionary)
+
 13. В процессе
 14. В процессе
 15. В процессе
