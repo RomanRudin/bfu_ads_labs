@@ -2,7 +2,7 @@ import heapq
 import os
 import random
 
-TEMP_FILES_PATH = "Lab12/temp_files/"
+TEMP_FILES_PATH = "/temp_files/"
 
 def merge_files(output_file, temp_files_counter) -> None:
     heap_array = []
@@ -45,32 +45,20 @@ def create_initial_runs(input_file, run_size) -> int:
                 data.append(int(line))
             data.sort()
 
-            if end_of_file:
-                break
-
             with open(TEMP_FILES_PATH + str(temp_files_counter) + '.txt', 'w', encoding="utf-8") as output:
-                print(TEMP_FILES_PATH + str(temp_files_counter) + '.txt')
                 output.write('\n'.join(str(i) for i in data))
 
             temp_files_counter += 1
+
+            if end_of_file: break
     return temp_files_counter
 
 
-def sort(input_file, output_file, run_size) -> None:
+def external_multiphase_sort_linear(path, run_size):
+    #run_size - How many numbers will programm read in one run
+
+    input_file = f"{path}/input.txt"
+    output_file = f"{path}/output.txt"
+
     temp_files_counter = create_initial_runs(input_file, run_size)
     merge_files(output_file, temp_files_counter)
-
-
-def external_multiphase_sort():
-    num_ways = 10
-    run_size = 1000
-
-    input_file = "Lab12/Data/input.txt"
-    output_file = "Lab12/Data/output.txt"
-
-    # Instead of testing system right now i'm using this:
-    with open(input_file, 'w') as f:
-        for _ in range(num_ways * run_size):
-            f.write(str(random.randint(0, 10000)) + '\n')
-
-    sort(input_file, output_file, run_size)

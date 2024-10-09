@@ -84,20 +84,22 @@ def testing_sorting(function: callable, show_results=True, testing_amount=10000,
 
 
 # Special testing for external sorting
-def testing_external_sorting(function: callable, path: str, show_results=True, write_summary=True, testing_amount=10000, max_len=100, min_max_elem=100) -> bool:
+def testing_external_sorting(function: callable, path: str, run_size=1000, show_results=True, write_summary=True, testing_amount=10000, max_len=100, min_max_elem=100) -> bool:
+    cwd = os.getcwd() + r"\Semester_1"
+    path = cwd + path
     if not os.path.exists(path):
-        raise Exception("Path does not exist!")
+        raise Exception(f"Path does not exist! {path}")
     if show_results:
         print(bcolors.OKBLUE + "Testing sorting algorythms..." + bcolors.ENDC)
     time_stamps = []
     for test in PREMADE_TESTS:
-        with open(path + "/input.txt", 'w', encoding="utf-8") as file:
+        with open(path + r"\input.txt", 'w', encoding="utf-8") as file:
             file.write("\n".join(str(num) for num in test))
         start_time = time()
-        function(path)
+        function(path, run_size)
         end_time = time()
         time_stamps.append(end_time - start_time)
-        with open(path + "/output.txt", 'r', encoding="utf-8") as file:
+        with open(path + r"\output.txt", 'r', encoding="utf-8") as file:
             result = list(map(int, file.read().split()))
         expected_result = sorted(test)
         if result != expected_result:
@@ -105,7 +107,7 @@ def testing_external_sorting(function: callable, path: str, show_results=True, w
                 print(bcolors.FAIL + 'Test failed!' + bcolors.ENDC)
                 if write_summary:
                     print(bcolors.FAIL + 'Check test_logs.txt for more info' + bcolors.ENDC)
-                    with open('test_logs.txt', 'w') as file:
+                    with open(cwd + r'\Tests\test_logs.txt', 'w') as file:
                         file.write(f'Expected \n{expected_result}\n but got \n{result}')
             return False
     if show_results:
@@ -116,7 +118,7 @@ def testing_external_sorting(function: callable, path: str, show_results=True, w
         with open(path + "/input.txt", 'w', encoding="utf-8") as file:
             file.write("\n".join(str(num) for num in test))
         start_time = time()
-        function(test)
+        function(path, run_size)
         end_time = time()
         time_stamps.append(end_time - start_time)
         with open(path + "/output.txt", 'r', encoding="utf-8") as file:
@@ -127,7 +129,7 @@ def testing_external_sorting(function: callable, path: str, show_results=True, w
                 print(bcolors.FAIL + 'Test failed!' + bcolors.ENDC)
                 if write_summary:
                     print(bcolors.FAIL + 'Check test_logs.txt for more info' + bcolors.ENDC)
-                    with open('test_logs.txt', 'w') as file:
+                    with open(cwd + r'\Tests\test_logs.txt', 'w') as file:
                         file.write(f'Expected \n{expected_result}\n but got \n{result}')
             return False
     if show_results:
