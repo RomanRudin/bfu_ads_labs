@@ -6,9 +6,9 @@ lab_14_test.py
 lab_15_test.py
 lab_16_test.py
 lab_17_test.py
-13_double_hashing.cpp
 hash.cpp
-lab_13_double_hashing.py
-lab_13_linear_probing_v2.py
-lab_13_quadratic_probing.py
+HashTable_double_hashing.cpp
+HashTable_double_hashing.py
+HashTable_linear_probing_v2.py
+HashTable_quadratic_probing.py
 hash_table.py
