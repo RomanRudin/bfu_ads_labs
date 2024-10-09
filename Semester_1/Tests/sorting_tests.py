@@ -1,5 +1,6 @@
 from time import time
 from random import randint
+from shutil import rmtree
 import os
 
 class bcolors:
@@ -84,7 +85,7 @@ def testing_sorting(function: callable, show_results=True, testing_amount=10000,
 
 
 # Special testing for external sorting
-def testing_external_sorting(function: callable, path: str, run_size=1000, show_results=True, write_summary=True, testing_amount=10000, max_len=100, min_max_elem=100) -> bool:
+def testing_external_sorting(function: callable, path: str, show_results=True, write_summary=True, testing_amount=10000, max_len=100, min_max_elem=100, clean_files=True, **extra_parameters) -> bool:
     cwd = os.getcwd() + r"\Semester_1"
     path = cwd + path
     if not os.path.exists(path):
@@ -93,10 +94,13 @@ def testing_external_sorting(function: callable, path: str, run_size=1000, show_
         print(bcolors.OKBLUE + "Testing sorting algorythms..." + bcolors.ENDC)
     time_stamps = []
     for test in PREMADE_TESTS:
+        if clean_files:
+            rmtree(path)
+            os.makedirs(path)
         with open(path + r"\input.txt", 'w', encoding="utf-8") as file:
             file.write("\n".join(str(num) for num in test))
         start_time = time()
-        function(path, run_size)
+        function(path, **extra_parameters)
         end_time = time()
         time_stamps.append(end_time - start_time)
         with open(path + r"\output.txt", 'r', encoding="utf-8") as file:
@@ -115,10 +119,13 @@ def testing_external_sorting(function: callable, path: str, run_size=1000, show_
         print(bcolors.OKBLUE + "Running random tests..." + bcolors.ENDC)
     for _ in range(testing_amount):
         test = [randint(-min_max_elem, min_max_elem) for _ in range(randint(2, max_len))]
+        if clean_files:
+            rmtree(path)
+            os.makedirs(path)
         with open(path + "/input.txt", 'w', encoding="utf-8") as file:
             file.write("\n".join(str(num) for num in test))
         start_time = time()
-        function(path, run_size)
+        function(path, **extra_parameters)
         end_time = time()
         time_stamps.append(end_time - start_time)
         with open(path + "/output.txt", 'r', encoding="utf-8") as file:

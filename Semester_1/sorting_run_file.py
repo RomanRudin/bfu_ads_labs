@@ -7,7 +7,7 @@ from Labs.Lab8.radix_sort import radix_sort
 from Labs.Lab9.heap_sort import heap_sort
 from Labs.Lab10.merge_sort import merge_sort
 from Labs.Lab11.quick_sort import quick_sort
-# from Labs.Lab12.external_multiphase_sort_recursive import external_multiphase_sort_recursive
+from Labs.Lab12.external_multiphase_sort_recursive import external_multiphase_sort_recursive
 from Labs.Lab12.external_multiphase_sort_linear import external_multiphase_sort_linear
 
 if __name__ == "__main__":
@@ -28,6 +28,6 @@ if __name__ == "__main__":
     # print("\nQuick sort:")
     # testing_sorting(quick_sort, max_len=10000, testing_amount=20)
     # print("\nExternal multiphase sort recursive:")
-    # testing_external_sorting(external_multiphase_sort_recursive, "Labs/Lab12/Data", max_len=10000, testing_amount=20)
+    # testing_external_sorting(external_multiphase_sort_recursive, r"\Labs\Lab12\Data", max_len=100000, min_max_elem=1000, testing_amount=20, clean_files=True, run_size=1000, multiphase_depth=2)
     print("\nExternal multiphase sort linear:")
-    testing_external_sorting(external_multiphase_sort_linear, r"\Labs\Lab12\Data", max_len=10000, testing_amount=20)
+    testing_external_sorting(external_multiphase_sort_linear, r"\Labs\Lab12\Data", max_len=100000, min_max_elem=1000, testing_amount=20, clean_files=False, run_size=1000)

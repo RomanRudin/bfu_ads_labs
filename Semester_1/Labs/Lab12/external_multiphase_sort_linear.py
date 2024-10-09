@@ -2,19 +2,17 @@ import heapq
 import os
 import random
 
-TEMP_FILES_PATH = "/temp_files/"
-
-def merge_files(output_file, temp_files_counter) -> None:
+def merge_files(output_file: str, temp_files: list[str], path: str) -> None:
     heap_array = []
-    temp_files = [open(TEMP_FILES_PATH + str(i) + '.txt', 'r', encoding="utf-8")  for i in range(temp_files_counter)]
+    temp_files = [open(temp_file, 'r', encoding="utf-8")  for temp_file in temp_files]
     with open(output_file, "w") as output:
-        for i in range(temp_files_counter):
+        for i in range(len(temp_files)):
             element = temp_files[i].readline().strip()
             if element:
                 heapq.heappush(heap_array, (int(element), i))
 
         counter = 0
-        while counter < temp_files_counter:
+        while counter < len(temp_files):
             root = heapq.heappop(heap_array)
             output.write(str(root[0]) + '\n')
 
@@ -24,16 +22,17 @@ def merge_files(output_file, temp_files_counter) -> None:
             else:
                 counter += 1
 
-        for i in range(temp_files_counter):
-            temp_files[i].close()
+        for temp_file in temp_files:
+            temp_file.close()
 
-def create_initial_runs(input_file, run_size) -> int:
+def create_initial_runs(input_file: str, run_size: str, path: str) -> list[str]:
+    temp_files = []
     with open(input_file, 'r', encoding="utf-8") as input: 
         end_of_file = False
         temp_files_counter = 0
         
-        if not os.path.exists(TEMP_FILES_PATH):
-            os.makedirs(TEMP_FILES_PATH)
+        if not os.path.exists(path):
+            os.makedirs(path)
         
         while True:
             data = []
@@ -45,20 +44,22 @@ def create_initial_runs(input_file, run_size) -> int:
                 data.append(int(line))
             data.sort()
 
-            with open(TEMP_FILES_PATH + str(temp_files_counter) + '.txt', 'w', encoding="utf-8") as output:
+            with open(path + str(temp_files_counter) + '.txt', 'w', encoding="utf-8") as output:
+                temp_files.append(path + str(temp_files_counter) + '.txt')
                 output.write('\n'.join(str(i) for i in data))
 
             temp_files_counter += 1
 
             if end_of_file: break
-    return temp_files_counter
+    return temp_files
 
 
-def external_multiphase_sort_linear(path, run_size):
+def external_multiphase_sort_linear(path: str, run_size: int) -> None:
     #run_size - How many numbers will programm read in one run
 
     input_file = f"{path}/input.txt"
     output_file = f"{path}/output.txt"
+    path += "\Temp_files_linear"
 
-    temp_files_counter = create_initial_runs(input_file, run_size)
-    merge_files(output_file, temp_files_counter)
+    temp_files = create_initial_runs(input_file, run_size, path)
+    merge_files(output_file, temp_files, path)
