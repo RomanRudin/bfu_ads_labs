@@ -44,8 +44,8 @@ def create_initial_runs(input_file: str, run_size: str, path: str) -> list[str]:
                 data.append(int(line))
             data.sort()
 
-            with open(path + str(temp_files_counter) + '.txt', 'w', encoding="utf-8") as output:
-                temp_files.append(path + str(temp_files_counter) + '.txt')
+            with open(path + r'\f_' + str(temp_files_counter) + '.txt', 'w', encoding="utf-8") as output:
+                temp_files.append(path + r'\f_' + str(temp_files_counter) + '.txt')
                 output.write('\n'.join(str(i) for i in data))
 
             temp_files_counter += 1

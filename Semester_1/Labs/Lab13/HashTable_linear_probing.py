@@ -14,9 +14,9 @@ class HashTable:
         self.table = [None] * capacity
         self.state = [0] * capacity
 
-    def hash_function(self, key, size=None) -> Any:
+    def hash_function(self, key, size=None) -> int:
         if not size: size = len(self.table)
-        return key % size
+        return int(hash(key)) % size
     
     def __rehash(self) -> tuple[list[None], list[int]]:
         self.capacity *= 2
@@ -72,11 +72,11 @@ class HashTable:
     #         hash_table[key] = value
     #     return hash_table
     
-    # def __len__(self) -> int:
-    #     return len(self.pairs)
+    def __len__(self) -> int:
+        return sum(self.state)
 
     # def __iter__(self)-> Generator[Any, Any, None]:
-    #     yield from self.keys
+        # yield from 
 
     # def __delitem__(self, key: Any) -> None:
     #     match self._find(key):
@@ -87,29 +87,27 @@ class HashTable:
     #             raise KeyError(key)
 
     # def __setitem__(self, key: Any, value: Any) -> None:
-    #     pass
+        # pass
 
-    # def __getitem__(self, key: Any) -> Any:
-    #     match self.search(key):
-    #         case _, _, pair:
-    #             return pair.value
-    #         case _:
-    #             raise KeyError(key)
+    def __getitem__(self, key: Any) -> Any:
+        if self.search(key) == -1:
+            raise KeyError(key)
+        return self.table[self.search(key)]
 
-    # def __contains__(self, key: Any) -> bool:
-    #     try:
-    #         self[key]
-    #     except KeyError:
-    #         return False
-    #     else:
-    #         return True
+    def __contains__(self, key: Any) -> bool:
+        try:
+            self[key]
+        except KeyError:
+            return False
+        else:
+            return True
 
-    # def __eq__(self, other: "HashTable") -> bool:
-    #     if self is other:
-    #         return True
-    #     if type(self) is not type(other):
-    #         return False
-    #     return set(self.pairs) == set(other.pairs)
+    def __eq__(self, other: "HashTable") -> bool:
+        if self is other:
+            return True
+        if type(self) is not type(other):
+            return False
+        return set(self.table) == set(other.table)
 
     # def __str__(self) -> LiteralString:
     #     pairs = []

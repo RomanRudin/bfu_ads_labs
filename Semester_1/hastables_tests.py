@@ -3,23 +3,21 @@ from Labs.Lab13.HashTable_linear_probing import HashTable as HashTable_linear_pr
 # from Labs.Lab13.HashTable_double_hashing import HashTable as HashTable_double_hashing
 # from Labs.Lab13.lab_14 import HashTable as HashTable_chaining_method
 
+from os import getcwd
 
-table = HashTable_linear_probing()
-table.insert(1)
-table.insert(2)
-table.insert(3)
-table.insert(4)
-table.insert(5)
-table.insert(6)
-table.insert(7)
-table.insert(8)
-table.insert(9)
-table.insert(10)
-table.insert("abs")
-table.insert(11)
-table.insert(12)
-table.insert(13)
-table.insert(14)
-table.insert(15)
-for i in range(1, 16):
-    print(f"{i}: {table.search(i)}")
+def main_test(path: str) -> bool:
+    hash_table = HashTable_linear_probing()
+    with open(path + r"\input.txt", 'r', encoding="utf-8") as file:
+        for line in file:
+            for word in line.split():
+                hash_table.insert(word)
+                print(word)
+    with open(path + r"\input.txt", 'r', encoding="utf-8") as input, open(path + r"\output.txt", 'w', encoding="utf-8") as output:
+        for line in input:
+            for word in line.split():
+                output.write(f"{hash_table.search(word)} " if hash_table.search(word) != -1 else word + ' ')
+            output.write('\n')
+    # HashTable_quadratic_probing(path)
+    # HashTable_double_hashing(path)
+    # HashTable_chaining_method(path)
+main_test(getcwd() + r"\Semester_1\Labs\Lab13")
