@@ -12,12 +12,10 @@ def main_test(path: str) -> bool:
             for word in line.split():
                 hash_table.insert(word)
                 print(word)
-    with open(path + r"\input.txt", 'r', encoding="utf-8") as input, open(path + r"\output.txt", 'w', encoding="utf-8") as output:
-        for line in input:
-            for word in line.split():
-                output.write(f"{hash_table.search(word)} " if hash_table.search(word) != -1 else word + ' ')
-            output.write('\n')
+    with open(path + r"\output.txt", 'w', encoding="utf-8") as output:
+        output.write(str(hash_table))
     # HashTable_quadratic_probing(path)
     # HashTable_double_hashing(path)
     # HashTable_chaining_method(path)
+
 main_test(getcwd() + r"\Semester_1\Labs\Lab13")

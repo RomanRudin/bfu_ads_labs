@@ -1,18 +1,11 @@
 from typing import Any, Literal, Generator, LiteralString
 
-class Node:
-    def __init__(self, key):
-        self.key = key
-        self.next = None
-
-
 class HashTable:
     def __init__(self, capacity=100, load_factor=0.75):
         self.items_count = 0
         self.load_factor = load_factor
         self.capacity = capacity
         self.table = [None] * capacity
-        self.state = [0] * capacity
 
     def hash_function(self, key, size=None) -> int:
         if not size: size = len(self.table)
@@ -21,34 +14,30 @@ class HashTable:
     def __rehash(self) -> tuple[list[None], list[int]]:
         self.capacity *= 2
         new_table = [None] * self.capacity
-        new_state = [0] * self.capacity
         for bucket in self.table:
             if not bucket: continue
-            self.__insert(bucket, new_table, new_state)
-        return new_table, new_state
+            self.__insert(bucket, new_table)
+        return new_table
 
-    def __insert(self, key, table=None, state=None) -> None:
+    def __insert(self, key, table=None) -> None:
         if not table: table = self.table
-        if not state: state = self.state
         index = self.hash_function(key)
-        while self.state[index] == 1:
+        while self.table[index] != None:
             index = (index + 1) % len(self.table)
-        table[index], state[index] = key, 1
+        table[index] = key
     
     def insert(self, key) -> None:
         self.items_count += 1
         load_factor = self.items_count / len(self.table)
         if load_factor > self.load_factor:
-            self.table, self.state = self.__rehash()
+            self.table = self.__rehash()
             self.load_factor = load_factor
         self.__insert(key)
 
 
     def search(self, key) -> Any | Literal[-1]:
         index = self.hash_function(key)
-        while (self.table[index] != key or\
-            self.state[index] == -1) and\
-                self.state[index] == 1:
+        while (self.table[index] != key and self.table[index] != None):
             index = (index + 1) % len(self.table)
         if self.table[index] == key:
             return index
@@ -57,7 +46,7 @@ class HashTable:
     def delete(self, key) -> None:
         index = self.search(key)
         if index > -1:
-            self.state[index] = -1
+            self.table[index] = None
 
 
     # Couple of methods, that are not nescessary for this lab purposes, 
@@ -65,34 +54,28 @@ class HashTable:
     # def copy(self) -> "HashTable":
     #     pass
 
-    # @classmethod
-    # def from_dict(cls, dictionary: dict, capacity=None) -> "HashTable":
-    #     hash_table = cls(capacity or len(dictionary))
-    #     for key, value in dictionary.items():
-    #         hash_table[key] = value
-    #     return hash_table
-    
     def __len__(self) -> int:
-        return sum(self.state)
+        return len(key for key in self.table if key != None)
 
-    # def __iter__(self)-> Generator[Any, Any, None]:
-        # yield from 
+    def __iter__(self)-> Generator[Any, Any, None]:
+        yield from [key for key in self.table if key != None] 
 
     # def __delitem__(self, key: Any) -> None:
-    #     match self._find(key):
-    #         case bucket, index, _:
-    #             del bucket[index]
-    #             self.keys.remove(key)
-    #         case _:
-    #             raise KeyError(key)
+        # match self._find(key):
+            # case bucket, index, _:
+                # del bucket[index]
+                # self.keys.remove(key)
+            # case _:
+                # raise KeyError(key)
 
     # def __setitem__(self, key: Any, value: Any) -> None:
         # pass
 
     def __getitem__(self, key: Any) -> Any:
-        if self.search(key) == -1:
+        search_result = self.search(key)
+        if search_result == -1:
             raise KeyError(key)
-        return self.table[self.search(key)]
+        return self.table[search_result]
 
     def __contains__(self, key: Any) -> bool:
         try:
@@ -107,43 +90,29 @@ class HashTable:
             return True
         if type(self) is not type(other):
             return False
-        return set(self.table) == set(other.table)
+        return set(self.table) == set(self.table) 
 
-    # def __str__(self) -> LiteralString:
-    #     pairs = []
-    #     for key, value in self.pairs:
-    #         pairs.append(f"{key!r}: {value!r}")
-    #     return "{" + ", ".join(pairs) + "}"
+    def __str__(self) -> LiteralString:
+        pairs = []
+        for index, key in enumerate(self.table):
+            if key == None: continue
+            pairs.append(f"{index!r}: {key!r}")
+        return "{" + ", ".join(pairs) + "}"
 
-    # def __repr__(self) -> str:
-    #     cls = self.__class__.__name__
-    #     return f"{cls}.from_dict({str(self)})"
-
-
-    # def copy(self) -> "HashTable":
-    #     return HashTable.from_dict(dict(self.pairs), self.capacity)
-
-    # def get(self, key: Any, default=None) -> Any | None:
-    #     try:
-    #         return self[key]
-    #     except KeyError:
-    #         return default
-
-    # @property
-    # def pairs(self) -> list[tuple]:
-    #     return [(key, self[key]) for key in self.keys]
-
-    # @property
-    # def values(self) -> list:
-    #     return [self[key] for key in self.keys]
+    def get(self, index: Any) -> Any | None:
+        return self.table[index]
 
     # @property
     # def keys(self) -> list:
-    #     return self.keys.copy()
+    #     return [key for key in self.table if key != None]
+
+    # @property
+    # def indexes(self) -> list:
+    #     return [i for i in self.table if self.table[i] != None]
 
     # @property
     # def capacity(self) -> int:
-    #     return len(self.buckets)
+    #     return self.capacity
 
     # @property
     # def load_factor(self) -> float:
