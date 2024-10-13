@@ -54,7 +54,7 @@ def create_initial_runs(input_file: str, run_size: str, path: str) -> list[str]:
     return temp_files
 
 
-def external_multiphase_sort_linear(path: str, run_size: int) -> None:
+def external_multiphase_sort(path: str, run_size: int) -> None:
     #run_size - How many numbers will programm read in one run
 
     input_file = f"{path}/input.txt"

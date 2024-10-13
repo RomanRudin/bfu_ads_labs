@@ -28,7 +28,7 @@ Currently I'm using English, but a bit later I'll use Russian, 'cause I don't ca
 ### Python <img src="https://github.com/devicons/devicon/blob/master/icons/python/python-original.svg"  title="Python" alt="Python" width="40" height="40"/>&nbsp;
 </a>
 
-1. [x] ["Задача о скобках"](/Semester_1/Labs/Lab1/lab_1.py)
+1. [x] ["Задача о скобках"](#lab-1-explanation)
 2. [x] ["Задача об арифметическом выражении"](/Semester_1/Labs/Lab2/lab_2.py)
 3. [x] ["Задача о простых множителях"](/Semester_1/Labs/Lab3/lab_3.py)
 4. [x] [Comb sort (Сортировка методом прочесывания)](/Semester_1/Labs/Lab4/lab_4.py)
@@ -170,7 +170,7 @@ Currently I'm using English, but a bit later I'll use Russian, 'cause I don't ca
 # Explanation for each lab
 </a>
 
-1. Используем [стэк](https://ru.wikipedia.org/wiki/%D0%A1%D1%82%D0%B5%D0%BA). Кладём туда открывающие скобочки по мере их поступления и убираем оттуда по одной последние, если встречаем нужную закрывающую. Навалено много синтаксического сахара, версию без наворотов смотреть [тут](/Semester_1/Labs/Lab1/Lab_1_simple.py).
+1. Используем [стэк](https://ru.wikipedia.org/wiki/%D0%A1%D1%82%D0%B5%D0%BA). Кладём туда открывающие скобочки по мере их поступления и убираем оттуда по одной последние, если встречаем нужную закрывающую. Переусложнённую версию смотреть [здесь](/Semester_1/Labs/Lab1/Lab_1.py). Навалено много синтаксического сахара, версию без наворотов смотреть [тут](/Semester_1/Labs/Lab1/Lab_1_simple.py). <a id="lab-1-explanation"></a>
 2. Читаем на Википедии про [обратную польскую нотацию](https://ru.wikipedia.org/wiki/%D0%9E%D0%B1%D1%80%D0%B0%D1%82%D0%BD%D0%B0%D1%8F_%D0%BF%D0%BE%D0%BB%D1%8C%D1%81%D0%BA%D0%B0%D1%8F_%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D1%8C) и вникаем.
 3. Простой перебор по степеням с ограничением логарифмом. Это задача факторизации, если есть желание упороться и написать эффективно - [читаем](https://ru.wikipedia.org/wiki/%D0%A4%D0%B0%D0%BA%D1%82%D0%BE%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F_%D1%86%D0%B5%D0%BB%D1%8B%D1%85_%D1%87%D0%B8%D1%81%D0%B5%D0%BB).
 

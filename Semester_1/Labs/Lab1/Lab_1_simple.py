@@ -1,3 +1,5 @@
+import queue
+
 def check_brackets(brackets: str, ) -> bool: 
     import queue
     lifo = queue.LifoQueue()
