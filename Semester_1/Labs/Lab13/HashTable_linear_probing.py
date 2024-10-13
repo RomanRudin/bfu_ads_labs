@@ -1,4 +1,4 @@
-from typing import Any, Literal, Generator, LiteralString
+from typing import Any, Literal, LiteralString
 
 class HashTable:
     def __init__(self, capacity=100, load_factor=0.75):
@@ -27,9 +27,10 @@ class HashTable:
         table[index] = key
     
     def insert(self, key) -> None:
+        if self.search(key) != -1: return
         self.items_count += 1
         load_factor = self.items_count / len(self.table)
-        if (load_factor > self.load_factor) and (self.search(key) == -1):
+        if load_factor > self.load_factor:
             self.table = self.__rehash()
             self.load_factor = load_factor
         self.__insert(key, self.table)
@@ -54,14 +55,6 @@ class HashTable:
     def __len__(self) -> int:
         return len([key for key in self.table if key != None])
 
-    def __iter__(self)-> Generator[Any, Any, None]:
-        yield from [key for key in self.table if key != None] 
-
-    def __getitem__(self, key: Any) -> Any:
-        search_result = self.search(key)
-        if search_result == -1:
-            raise KeyError(key)
-        return self.table[search_result]
 
     def __eq__(self, other: "HashTable") -> bool:
         if self is other:
@@ -81,10 +74,20 @@ class HashTable:
             pairs.append(f"{index!r}: {key!r}")
         return "{" + ", ".join(pairs) + "}"
 
-    def get(self, index: Any) -> Any | None:
-        return self.table[index]
 
     #TODO Just for fun
+    # def __iter__(self)-> Generator[Any, Any, None]:
+    #     yield from [key for key in self.table if key != None] 
+
+    # def __getitem__(self, key: Any) -> Any:
+    #     search_result = self.search(key)
+    #     if search_result == -1:
+    #         raise KeyError(key)
+    #     return self.table[search_result]
+
+    # def get(self, index: Any) -> Any | None:
+    #     return self.table[index]
+
     # @property
     # def keys(self) -> list:
     #     return [key for key in self.table if key != None]

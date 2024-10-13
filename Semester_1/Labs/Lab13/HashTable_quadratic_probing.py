@@ -1,4 +1,4 @@
-from typing import Any, Literal, Generator, LiteralString
+from typing import Any, Literal, LiteralString
 
 class HashTable:
     def __init__(self, capacity=100, load_factor=0.75):
@@ -11,7 +11,7 @@ class HashTable:
         if not size: size = self.capacity
         return int(hash(key)) % size
     
-    def __rehash(self) -> list[None]:
+    def __rehash(self) -> list[None | Any]:
         self.capacity *= 2
         new_table = [None] * self.capacity
         for key in self.table:
@@ -28,9 +28,10 @@ class HashTable:
         table[index] = key
     
     def insert(self, key) -> None:
+        if self.search(key) != -1: return
         self.items_count += 1
         load_factor = self.items_count / len(self.table)
-        if (load_factor > self.load_factor) and (self.search(key) == -1):
+        if load_factor > self.load_factor:
             self.table = self.__rehash()
             self.load_factor = load_factor
         self.__insert(key, self.table)
