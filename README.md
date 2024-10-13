@@ -31,9 +31,9 @@ Currently I'm using English, but a bit later I'll use Russian, 'cause I don't ca
 </a>
 
 1. [x] ["Задача о скобках"](#lab-1-explanation)
-2. [x] ["Задача об арифметическом выражении"](/Semester_1/Labs/Lab2/lab_2.py)
+2. [x] ["Задача об арифметическом выражении"](/Semester_1/Labs/Lab2/Reversed_polish_notation.py)
 3. [x] ["Задача о простых множителях"](/Semester_1/Labs/Lab3/lab_3.py)
-4. [x] [Comb sort (Сортировка методом прочесывания)](/Semester_1/Labs/Lab4/сomb_sort.py)
+4. [x] [Comb sort (Сортировка методом прочесывания)](/Semester_1/Labs/Lab4/comb_sort.py)
 5. [x] [Insertion sort (Сортировка вставками)](/Semester_1/Labs/Lab5/insertion_sort.py)
 6. [x] [Selection sort (Сортировка выбором)](/Semester_1/Labs/Lab6/selection_sort.py)
 7. [x] [Shell sort (Сортировка Шелла)](/Semester_1/Labs/Lab7/shell_sort.py)
