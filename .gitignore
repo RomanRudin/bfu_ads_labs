@@ -7,6 +7,8 @@ lab_16_test.py
 lab_17_test.py
 hash.cpp
 HashTable_double_hashing.cpp
+HashTable_quadratic_probing.cpp
 HashTable_double_hashing.py
 HashTable_separate_chaining.py
+HashTable_separate_chaining.cpp
 hash_table.py

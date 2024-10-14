@@ -17,7 +17,7 @@ class HashTable:
         if not size: size = self.capacity
         return int(hash(key)) % size
 
-    def __insert_last(self, index, key, table=None) -> None:
+    def __insert_last(self, index, key, table=None) -> bool:
         if not table: table = self.table
         new_node = Node(key)
         if not table[index]:
@@ -25,9 +25,10 @@ class HashTable:
             return
         current = table[index]
         while current.next:
-            if current.key == key: return
+            if current.key == key: return False
             current = current.next
         current.next = new_node
+        return True
 
     def __rehash(self) -> list[None | Any]:
         self.capacity *= 2
@@ -46,14 +47,14 @@ class HashTable:
         return new_table
     
     def insert(self, key) -> None:
-        if self.search(key) != -1: return
+        index = self.hash_function(key)
+        was_inserted = self.__insert_last(index, key)
+        if not was_inserted: return 
         self.items_count += 1
         load_factor = self.items_count / self.capacity
         if load_factor > self.load_factor:
             self.table = self.__rehash()
             self.load_factor = self.items_count / self.capacity
-        index = self.hash_function(key)
-        self.__insert_last(index, key)
 
     def search(self, key) -> Any | Literal[-1]:
         index = self.hash_function(key)
@@ -70,17 +71,16 @@ class HashTable:
         index = self.hash_function(key)
         if not self.table[index]:
             raise Exception(f"List is Empty!! key = {key} doesn't exist in the list")
-
         if self.table[index].key == key:
             self.table[index] = self.table[index].next
             return
         current, previous = self.table[index], self.table[index]
         while current and current.next != key:
             previous, current = current, current.next
-
         if not current:
             raise Exception(f"key = {key} doesn't exist in the list")
         previous.next = current.next
+        self.items_count -= 1
 
 
     # Couple of methods, that are not nescessary for this lab purposes, 

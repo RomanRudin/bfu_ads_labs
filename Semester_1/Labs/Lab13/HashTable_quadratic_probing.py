@@ -19,37 +19,38 @@ class HashTable:
             self.__insert(key, new_table)
         return new_table
 
-    def __insert(self, key, table) -> None:
+    def __insert(self, key, table) -> bool:
         index, counter = self.hash_function(key, size=len(table)), 1
         while table[index] != None:
-            if table[index] == key: return
+            if table[index] == key: return False
             index = (index + counter ** 2) % len(table)
             counter += 1
         table[index] = key
+        return True
     
     def insert(self, key) -> None:
-        if self.search(key) != -1: return
+        was_inserted = self.__insert(key, self.table)
+        if not was_inserted: return
         self.items_count += 1
         load_factor = self.items_count / len(self.table)
-        if load_factor > self.load_factor:
+        if (load_factor > self.load_factor):
             self.table = self.__rehash()
             self.load_factor = load_factor
-        self.__insert(key, self.table)
 
 
     def search(self, key) -> Any | Literal[-1]:
         index, counter = self.hash_function(key), 1
-        while (self.table[index] != key and self.table[index] != None):
+        while (self.table[index] != None):
+            if (self.table[index] == key): return index
             index = (index + counter ** 2) % len(self.table)
             counter += 1
-        if self.table[index] == key:
-            return index
         return -1
 
     def delete(self, key) -> None:
         index = self.search(key)
         if index > -1:
             self.table[index] = None
+            self.items_count -= 1
 
 
     # Couple of methods, that are not nescessary for this lab purposes, 
