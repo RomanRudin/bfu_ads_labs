@@ -22,15 +22,17 @@ class HashTable:
         new_node = Node(key)
         if not table[index]:
             table[index] = new_node
-            return
+            return True 
         current = table[index]
+        if current.key == key: return False
         while current.next:
-            if current.key == key: return False
             current = current.next
+            if current.key == key: return False
         current.next = new_node
         return True
 
     def __rehash(self) -> list[None | Any]:
+        self.items_count = 0
         self.capacity *= 2
         new_table = [None] * self.capacity
         for first_key in self.table:
@@ -49,12 +51,13 @@ class HashTable:
     def insert(self, key) -> None:
         index = self.hash_function(key)
         was_inserted = self.__insert_last(index, key)
+        print(was_inserted, key)
         if not was_inserted: return 
         self.items_count += 1
         load_factor = self.items_count / self.capacity
         if load_factor > self.load_factor:
+            print("REHASH!")
             self.table = self.__rehash()
-            self.load_factor = self.items_count / self.capacity
 
     def search(self, key) -> Any | Literal[-1]:
         index = self.hash_function(key)

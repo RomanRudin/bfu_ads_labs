@@ -148,13 +148,11 @@ int main() {
     std::cout << hash_table << std::endl;
     hash_table.insert("c");
     std::cout << hash_table << std::endl;
-    std::cout << hash_table << std::endl;
     hash_table.insert("d");
     std::cout << hash_table << std::endl;
     hash_table.insert("efghikj");
     std::cout << hash_table << std::endl;
     hash_table.insert("efghikj");
-
     std::cout << hash_table << std::endl;
 
     return 0;
