@@ -17,7 +17,7 @@ Labs of first semester have numeration 1-17.
 
 Labs of second semester have numeration 18-???.
 
-Currently I'm using English, but a bit later I'll use Russian, 'cause I don't care about those who doesn't know both of those languages.
+Currently I'm using English, but a bit later I'll use Russian, 'cause I don't care about those who don't know both of those languages.
 
 
 
