@@ -212,7 +212,7 @@ Currently I'm using English, but a bit later I'll use Russian, 'cause I don't ca
 
  13. Open Adressing
 
- - - Linear-Probing on [Python](Semester_1/Lab13/HashTable_linear_probing.py), [C++](Semester_1/Lab13/HashTable_linear_probing.cpp) - Значения при возникновении коллизии кладутся в следующие ячейки до тех пор, пока коллизий не будет. Ищется по такому же принципу (т.е. до тех пор, пока не найдём значение в следующих ячейках или пока следующая ячейка не будет пустой)
+ - - Linear-Probing on [<img src="https://github.com/devicons/devicon/blob/master/icons/python/python-original.svg"  title="Python" alt="Python" width="20" height="20"/>](Semester_1/Lab13/HashTable_linear_probing.py), [C++](Semester_1/Lab13/HashTable_linear_probing.cpp) - Значения при возникновении коллизии кладутся в следующие ячейки до тех пор, пока коллизий не будет. Ищется по такому же принципу (т.е. до тех пор, пока не найдём значение в следующих ячейках или пока следующая ячейка не будет пустой)
 
  - - Quadratic-Probing on [Python](/Semester_1/Lab13/HashTable_quadratic_probing.py), [C++](Semester_1/Lab13/HashTable_quadratic_probing.cpp) - Значения при возникновении коллизии кладутся в следующие ячейки по принципу "сначала прибавим квадрат единички, потом сверху квадрат двойки, потом квадрат тройки и т.д." до тех пор, пока коллизий не будет. Ищется по такому же принципу (т.е. до тех пор, пока не найдём значение в следующих ячейках или пока следующая найденная подобным образом ячейка не будет пустой)
 
