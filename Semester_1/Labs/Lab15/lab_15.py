@@ -63,7 +63,7 @@ def create_subtree(string: str, start: int, end: int) -> Node:
     
     if right_subtree_index :
         node.left = create_subtree(string, start+1, right_subtree_index)
-        node.right = create_subtree(string, right_subtree_index+1, end - 1)
+        node.right = create_subtree(string, right_subtree_index+1, end-1)
     return node
 
 

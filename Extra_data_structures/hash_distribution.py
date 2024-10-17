@@ -1,5 +1,3 @@
-# hash_distribution.py
-
 from collections import Counter
 
 

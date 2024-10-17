@@ -147,7 +147,7 @@ namespace HashTable_sc
                     if (current->next == nullptr) break;
                     current = current->next;
                 }
-                Node<T>* new_node = new Node<T>(value);;
+                Node<T>* new_node = new Node<T>(value);
                 current->next = new_node;
             }
             this->items_count++;
