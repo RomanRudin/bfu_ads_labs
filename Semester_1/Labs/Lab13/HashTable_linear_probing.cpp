@@ -1,8 +1,7 @@
 #include <iostream>
 #include <string>
-#include <unordered_map>
 
-// THIS IS JUST A STRUCTURE, I DIDN'T WANT TO IMPLEMENT READING AND WRITING TO FILE
+//! THIS IS JUST A STRUCTURE, I DIDN'T WANT TO IMPLEMENT READING AND WRITING TO FILE, YOU SHOULD DO IT BY YOURSELF
 
 namespace HashTable_lp
 {
@@ -133,6 +132,9 @@ namespace HashTable_lp
     };
 };
 
+//! THIS IS JUST A STRUCTURE, I DIDN'T WANT TO IMPLEMENT READING AND WRITING TO FILE, YOU SHOULD DO IT BY YOURSELF
+
+
 int main() {
     HashTable_lp::HashTable<std::string> hash_table;
 
@@ -157,3 +159,5 @@ int main() {
 
     return 0;
 }
+
+//! THIS IS JUST A STRUCTURE, I DIDN'T WANT TO IMPLEMENT READING AND WRITING TO FILE, YOU SHOULD DO IT BY YOURSELF

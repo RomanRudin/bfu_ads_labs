@@ -57,7 +57,7 @@ Currently I'm using English, but a bit later I'll use Russian, 'cause I don't ca
 </a>
 
 1. [x] ["Задача о скобках"](/Semester_1/Labs/Lab2/lab_1.cpp)
-2. [ ] ["Задача об арифметическом выражении"](/Semester_1/Labs/Lab2/lab_2.cpp)
+2. [x] ["Задача об арифметическом выражении"](/Semester_1/Labs/Lab2/lab_2.cpp)
 3. [x] ["Задача о простых множителях"](/Semester_1/Labs/Lab3/lab_3.cpp)
 4. [x] [Comb sort (Сортировка методом прочесывания)](/Semester_1/Labs/Lab4/сomb_sort.cpp)
 5. [x] [Insertion sort (Сортировка вставками)](/Semester_1/Labs/Lab5/insertion_sort.cpp)
@@ -67,8 +67,8 @@ Currently I'm using English, but a bit later I'll use Russian, 'cause I don't ca
 9. [x] [Heap sort (Сортировка пирамидальная)](/Semester_1/Labs/Lab9/heap_sort.cpp)
 10. [x] [Merge sort (Сортировка слиянием)](/Semester_1/Labs/Lab10/merge_sort.cpp)
 11. [x] [QSort (Быстрая сортировка)](/Semester_1/Labs/Lab11/quick_sort.cpp)
-12. [ ] [External multiphase merge sort (Внешняя многофазная сортировка слиянием)](/Semester_1/Labs/Lab12/external_multiphase_sort.cpp)
-13. [ ] [Хэш-табоица с открытой адресацией](/Semester_1/Labs/Lab13/HashTable_double_hashing.cpp)
+12. [x] [External multiphase merge sort (Внешняя многофазная сортировка слиянием)](/Semester_1/Labs/Lab12/external_multiphase_sort.cpp)
+13. [X] [Хэш-табоица с открытой адресацией](/Semester_1/Labs/Lab13/HashTable_double_hashing.cpp)
 14. [ ] [Хэш-табоица со списками](/Semester_1/Labs/Lab14/HashTable_separate_chaining.cpp)
 15. [ ] [Рекурсивные обходы (прямой, центральный, концевой)](/Semester_1/Labs/Lab15/lab_15.cpp)
 16. [ ] [Не рекурсивный прямой обход](/Semester_1/Labs/Lab16/lab_16.cpp)
@@ -216,7 +216,7 @@ Currently I'm using English, but a bit later I'll use Russian, 'cause I don't ca
 
  - - Quadratic-Probing on [<img src="https://github.com/devicons/devicon/blob/master/icons/python/python-original.svg"  title="Python" alt="Python" width="17" height="17"/>](/Semester_1/Labs/Lab13/HashTable_quadratic_probing.py), [<img src="https://github.com/devicons/devicon/blob/master/icons/cplusplus/cplusplus-original.svg"  title="Python" alt="Python" width="17" height="17"/>](Semester_1/Labs/Lab13/HashTable_quadratic_probing.cpp) - Значения при возникновении коллизии кладутся в следующие ячейки по принципу "сначала прибавим квадрат единички, потом сверху квадрат двойки, потом квадрат тройки и т.д." до тех пор, пока коллизий не будет. Ищется по такому же принципу (т.е. до тех пор, пока не найдём значение в следующих ячейках или пока следующая найденная подобным образом ячейка не будет пустой)
 
- - - Double-Hashing on [<img src="https://github.com/devicons/devicon/blob/master/icons/python/python-original.svg"  title="Python" alt="Python" width="17" height="17"/>](/Semester_1/Labs/Lab13/HashTable_double_hashing.py), [<img src="https://github.com/devicons/devicon/blob/master/icons/cplusplus/cplusplus-original.svg"  title="Python" alt="Python" width="17" height="17"/>](Semester_1/Labs/Lab13/HashTable_double_hashing.cpp) - Сложнее. У нас есть вторая хэш-функция. Значения при возникновении коллизии кладутся в следующие ячейки по принципу "будет домножать хэш-код номер 2 на номер нашей попытки положить значение в следующую ячейку и пытаться класть его снова до тех пор, пока в конечном итоге не получится". Ищется по такому же принципу.
+ - - Double-Hashing on [<img src="https://github.com/devicons/devicon/blob/master/icons/python/python-original.svg"  title="Python" alt="Python" width="17" height="17"/>](/Semester_1/Labs/Lab13/HashTable_double_hashing.py), [<img src="https://github.com/devicons/devicon/blob/master/icons/cplusplus/cplusplus-original.svg"  title="Python" alt="Python" width="17" height="17"/>](Semester_1/Labs/Lab13/HashTable_double_hashing.cpp) - !!!Найдена ошмбка в алгоритме при одном из крайних случаев, в процессе исправления. Если хотите помочь - кидайте пулл-реквест!!! Сложнее. У нас есть вторая хэш-функция. Значения при возникновении коллизии кладутся в следующие ячейки по принципу "будет домножать хэш-код номер 2 на номер нашей попытки положить значение в следующую ячейку и пытаться класть его снова до тех пор, пока в конечном итоге не получится". Ищется по такому же принципу.
 
 <a name="lab-14-explanation"></a>
 
@@ -245,7 +245,10 @@ Currently I'm using English, but a bit later I'll use Russian, 'cause I don't ca
 
 - [Введение (зачем???)](/docs/Lektsia_1_Vvedenie.pptx)
 - [Введение в структуры данных](/docs/Lektsia_2_Struktury_dannykh.pptx)
-<!-- - [Виды сортировок + псевдокод к ним (господи, я искал эту хрень месяц, а потом он просто скинул эту презентацию бл#$&!)](/docs/) -->
+- [Виды сортировок + псевдокод к ним (господи, я искал эту хрень месяц, а потом он просто скинул эту презентацию бл#$&!)](/docs/Lektsia_3-4-5_Sortirovki.pptx)
+- [Хэш-таблицы (HashTables)](/docs/Lektsia_6_Khesh-tablitsy.pptx)
+<!-- - [Деревья (Binary Tree)](/docs/) -->
+<!-- - [Бинарные деревья поиска (Binary Search Tree, BST)](/docs/) -->
 
 
 

@@ -1,6 +1,5 @@
 import heapq
 import os
-import random
 
 def merge_files(output_file: str, temp_files: list[str], path: str) -> None:
     heap_array = []

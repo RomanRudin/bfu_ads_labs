@@ -5,6 +5,10 @@
 #include <unordered_map>
 #include <stdexcept>
 
+//! REWRITTEN FROM PYTHON USING AI, IN NEED OF TESTING AND PROBABLY WON'T WORK
+//! REWRITTEN FROM PYTHON USING AI, IN NEED OF TESTING AND PROBABLY WON'T WORK
+//! REWRITTEN FROM PYTHON USING AI, IN NEED OF TESTING AND PROBABLY WON'T WORK
+
 // Function to check if brackets are correct
 bool checkBrackets(const std::string& expression, const std::unordered_map<char, char>& bracketMap) {
     std::stack<char> stack;
@@ -178,3 +182,6 @@ int main() {
 
     return 0;
 }
+//! REWRITTEN FROM PYTHON USING AI, IN NEED OF TESTING AND PROBABLY WON'T WORK
+//! REWRITTEN FROM PYTHON USING AI, IN NEED OF TESTING AND PROBABLY WON'T WORK
+//! REWRITTEN FROM PYTHON USING AI, IN NEED OF TESTING AND PROBABLY WON'T WORK

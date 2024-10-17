@@ -24,15 +24,15 @@ class HashTable:
             table[index] = new_node
             return True 
         current = table[index]
-        if current.key == key: return False
-        while current.next:
-            current = current.next
+        while current:
             if current.key == key: return False
+            if not current.next: break
+            current = current.next
         current.next = new_node
         return True
 
     def __rehash(self) -> list[None | Any]:
-        self.items_count = 0
+        # print("REHASH!")
         self.capacity *= 2
         new_table = [None] * self.capacity
         for first_key in self.table:
@@ -51,12 +51,10 @@ class HashTable:
     def insert(self, key) -> None:
         index = self.hash_function(key)
         was_inserted = self.__insert_last(index, key)
-        print(was_inserted, key)
         if not was_inserted: return 
         self.items_count += 1
         load_factor = self.items_count / self.capacity
         if load_factor > self.load_factor:
-            print("REHASH!")
             self.table = self.__rehash()
 
     def search(self, key) -> Any | Literal[-1]:
@@ -93,11 +91,11 @@ class HashTable:
     def keys(self) -> list[Any]:
         keys = []
         for first_node in self.table: 
-            if first_node != None:
-                node = first_node
-                while node.next:
-                    keys.append(node.key)
-                    node = node.next
+            node = first_node
+            while node:
+                keys.append(node.key)
+                if not node.next: break
+                node = node.next
         return keys
     
     @property
@@ -110,7 +108,6 @@ class HashTable:
                 while node.next:
                     node = node.next
                     keys.append(node.key)
-                keys.pop(-1)
                 pairs.append((index, keys))
         return pairs
 

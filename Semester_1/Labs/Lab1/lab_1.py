@@ -41,5 +41,5 @@ def check_brackets(brackets: str, BRACKETS_INFO: dict, print_correctness=True, p
             
 
 # Main code
-#brackets = input("Пожалуйста, введите строку: ")
-#check_brackets(brackets, BRACKETS_INFO)
+# brackets = input("Пожалуйста, введите строку: ")
+# check_brackets(brackets, BRACKETS_INFO)

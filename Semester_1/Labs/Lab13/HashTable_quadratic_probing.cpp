@@ -1,8 +1,9 @@
 #include <iostream>
 #include <string>
-#include <unordered_map>
 
-namespace HashTable_lp
+//! THIS IS JUST A STRUCTURE, I DIDN'T WANT TO IMPLEMENT READING AND WRITING TO FILE, YOU SHOULD DO IT BY YOURSELF
+
+namespace HashTable_qp
 {
     template <class T>
     struct Node
@@ -135,8 +136,11 @@ namespace HashTable_lp
     };
 };
 
+//! THIS IS JUST A STRUCTURE, I DIDN'T WANT TO IMPLEMENT READING AND WRITING TO FILE, YOU SHOULD DO IT BY YOURSELF
+
+
 int main() {
-    HashTable_lp::HashTable<std::string> hash_table;
+    HashTable_qp::HashTable<std::string> hash_table;
 
     hash_table.insert("abc");
     std::cout << hash_table << std::endl;
@@ -159,3 +163,5 @@ int main() {
 
     return 0;
 }
+
+//! THIS IS JUST A STRUCTURE, I DIDN'T WANT TO IMPLEMENT READING AND WRITING TO FILE, YOU SHOULD DO IT BY YOURSELF
