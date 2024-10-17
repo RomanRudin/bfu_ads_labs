@@ -69,7 +69,7 @@ def create_subtree(string: str, start: int, end: int) -> Node:
 
 
 if __name__ == "__main__":
-    bt = create_tree(input("Please, enter the linear-bracket string: "))
+    bt = create_tree(input("Please, enter the linear-bracket string: ").strip())
     print('In-Order traverse')
     bt.traverseInOrder()
     print('\n')

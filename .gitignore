@@ -2,6 +2,4 @@ ADS_Labs
 .vscode
 __pycache__
 binary_tree_reader.py
-lab_15_test.py
-lab_16_test.py
 lab_17_test.py
