@@ -1,21 +1,8 @@
-from queue import LifoQueue
-
 class Node:
     def __init__(self, key):
         self.left = None
         self.right = None
         self.val = key
-
-    def traverseNonRecursive(self) -> None:
-        stack = LifoQueue()
-        stack.put(self)
-        while not stack.empty():
-            current = stack.get()
-            while current:
-                print(current.val, end=' ')
-                if current.left:
-                    stack.put(current.left)
-                current = current.right
 
 
 
@@ -51,10 +38,3 @@ def create_subtree(string: str, start: int, end: int) -> Node:
         node.left = create_subtree(string, start+1, right_subtree_index)
         node.right = create_subtree(string, right_subtree_index+1, end - 1)
     return node
-
-
-
-if __name__ == "__main__":
-    bt = create_tree(input("Please, enter the linear-bracket string: ").strip())
-    print('Traverse without recursion: ')
-    bt.traverseNonRecursive()

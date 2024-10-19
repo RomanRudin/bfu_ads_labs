@@ -32,7 +32,6 @@ class HashTable:
         return True
 
     def __rehash(self) -> list[None | Any]:
-        # print("REHASH!")
         self.capacity *= 2
         new_table = [None] * self.capacity
         for first_key in self.table:
@@ -83,9 +82,6 @@ class HashTable:
         previous.next = current.next
         self.items_count -= 1
 
-
-    # Couple of methods, that are not nescessary for this lab purposes, 
-    # # I made them just for fun
 
     @property
     def keys(self) -> list[Any]:

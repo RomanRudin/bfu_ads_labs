@@ -7,7 +7,7 @@ This ReadMe.md consists of:
 - [Text of the lab](#Labs-text)
 - [Explanation for each lab](#Explanation-labs)
 - [Presentations from our lecturer](#Presentations)
-- [Some explanation of extra things that I made](#Explanation-extra)
+- [Some extra things that I made](#Extra)
 
 Крайне рекомендую от себя читать объяснения к лабам. Особенно те объяснения, что написаны мной вручную, те, где даны не только ссылки. Там информация изложена в максимально понятном ключе и должна достаточно просто восприниматься.
  
@@ -45,10 +45,10 @@ Currently I'm using English, but a bit later I'll use Russian, 'cause I don't ca
 11. [x] [QSort (Быстрая сортировка)](/Semester_1/Labs/Lab11/quick_sort.py)
 12. [x] [External multiphase merge sort (Внешняя многофазная сортировка слиянием)](/Semester_1/Labs/Lab12/external_multiphase_sort.py)
 13. [x] [Хэш-табоица с открытой адресацией](#lab-13-explanation)
-14. [ ] [Хэш-табоица со списками](#lab-14-explanation)
-15. [ ] [Рекурсивные обходы (прямой, центральный, концевой)](/Semester_1/Labs/Lab15/lab_15.py)
-16. [ ] [Не рекурсивный прямой обход](/Semester_1/Labs/Lab16/lab_16.py)
-17. [ ] [Операции над БНП: поиск, добавление, удаление](/Semester_1/Labs/Lab17/lab_17.py)
+14. [x] [Хэш-табоица со списками](#lab-14-explanation)
+15. [x] [Рекурсивные обходы (прямой, центральный, концевой)](/Semester_1/Labs/Lab15/lab_15.py)
+16. [x] [Не рекурсивный прямой обход](/Semester_1/Labs/Lab16/lab_16.py)
+17. [x] [Операции над БНП: поиск, добавление, удаление](#lab-17-explanation)
 
 
 <a name="Labs-done-c++">
@@ -68,11 +68,11 @@ Currently I'm using English, but a bit later I'll use Russian, 'cause I don't ca
 10. [x] [Merge sort (Сортировка слиянием)](/Semester_1/Labs/Lab10/merge_sort.cpp)
 11. [x] [QSort (Быстрая сортировка)](/Semester_1/Labs/Lab11/quick_sort.cpp)
 12. [x] [External multiphase merge sort (Внешняя многофазная сортировка слиянием)](/Semester_1/Labs/Lab12/external_multiphase_sort.cpp)
-13. [X] [Хэш-табоица с открытой адресацией](/Semester_1/Labs/Lab13/HashTable_double_hashing.cpp)
-14. [ ] [Хэш-табоица со списками](/Semester_1/Labs/Lab14/HashTable_separate_chaining.cpp)
-15. [ ] [Рекурсивные обходы (прямой, центральный, концевой)](/Semester_1/Labs/Lab15/lab_15.cpp)
-16. [ ] [Не рекурсивный прямой обход](/Semester_1/Labs/Lab16/lab_16.cpp)
-17. [ ] [Операции над БНП: поиск, добавление, удаление](/Semester_1/Labs/Lab17/lab_17.cpp)
+13. [x] [Хэш-табоица с открытой адресацией](#lab-13-explanation)
+14. [x] [Хэш-табоица со списками](#lab-14-explanation)
+15. [x] [Рекурсивные обходы (прямой, центральный, концевой)](/Semester_1/Labs/Lab15/lab_15.cpp)
+16. [x] [Не рекурсивный прямой обход](/Semester_1/Labs/Lab16/lab_16.cpp)
+17. [x] [Операции над БНП: поиск, добавление, удаление](/Semester_1/Labs/Lab17/lab_17.cpp)
 
 
 
@@ -213,12 +213,14 @@ Currently I'm using English, but a bit later I'll use Russian, 'cause I don't ca
 
 15. Рекурсивные обходы. Что говорить? Дерево состоит из узлов. Начиная с корневого узла прсото либо сначала печатаем, потом переходим к левому узлу в рекрсии, потом к правому в рекрсии. Либо сначала переходим к левым узлам рекурсивно, потом печатаем, потом к правым. Либо сначала к левым, потом к правым, потом печатаем. 
 
-Интересный алгоритм пришлось написать для чтения линейно-скобочной записи, но комментировать особо нечего, надо алгоритм смотреть.
+Интересный алгоритм ([<img src="https://github.com/devicons/devicon/blob/master/icons/python/python-original.svg"  title="Python" alt="Python" width="17" height="17"/>](/Extra_things/BT_reader.py), [<img src="https://github.com/devicons/devicon/blob/master/icons/cplusplus/cplusplus-original.svg"  title="Python" alt="Python" width="17" height="17"/>](/Extra_things/BT_reader.cpp)) пришлось написать для чтения линейно-скобочной записи, но комментировать особо нечего, надо смотреть.
 
 16. Для того, чтобы нерекурсивно пройти бинарное дерево можно просто взять стэк, проходить только по правым или левым узлам, и, соответственно, левые или правые узлы, которые увидели у родительских жлементов добавлять в стэк. А после каждого обхода возвращаться к стэку и начинать опять обход от него.
 
-17. В процессе
+<a name="lab-17-explanation"></a>
 
+17. Тут всё просто. [Читаем]() про BST, смотрим код. Методы реализованы рекурсивно. Для лабы достаточно сдать то, тчо есть в [lab_17_simple.py](/Semester_1/Labs/Lab17/lab_17_simple.py) или [17.cpp](/Semester_1/Labs/Lab17/17.cpp), [lab_17.py](/Semester_1/Labs/Lab17/lab_17.py) - жуткий оверкилл, включающий в себя содержание лаб 15-16, а также в будущем алгоритм красивого вывода бинарного дерева.
+ 
 
 
 
@@ -239,9 +241,9 @@ Currently I'm using English, but a bit later I'll use Russian, 'cause I don't ca
 
 
 
-<a name="Explanation-extra">
+<a name="Extra">
 
-# Some explanation of extra things that I wrote here
+# Some extra things that I wrote here
 </a>
 Гуляя по репозиторию Вы можете наткнуться на различную фигню, которую я для себя сделал, но которая точно, прямо 100%, прямо прямо да, стоила затраченных усчтвенных сил, времени и нервов. Пройдёмся немного по подобным штукам:
 
@@ -253,3 +255,39 @@ Currently I'm using English, but a bit later I'll use Russian, 'cause I don't ca
 - [Файл с автоматичесим тестированием хэш-таблицы](/Semester_1/hastables_tests.py) 
 
 Простой тест чисто по заданию. Увы, не хотелось пока что-то большее писать.
+
+
+- [Визуализатор распределения ключей для хэш-таблицы](/Extra_things/hash_distribution.py)
+
+Помог бы сделать свою хэш-функцию, так как если покрутить - хорошо показывает распределение. [Вот отсюда](https://realpython.com/python-hash-table/#hash-table-vs-dictionary) взял, понравилось, решил оставить после написания лабы.
+
+
+
+- Ридеры (как их назвать?) бинарных деревьев ([<img src="https://github.com/devicons/devicon/blob/master/icons/python/python-original.svg"  title="Python" alt="Python" width="17" height="17"/>](/Extra_things/BT_reader.py), [<img src="https://github.com/devicons/devicon/blob/master/icons/cplusplus/cplusplus-original.svg"  title="Python" alt="Python" width="17" height="17"/>](/Extra_things/BT_reader.cpp))
+
+Переводят линейно-скобочную запись (нотацию) в построенное бинарное дерево. Используется в лабах 15-16, 17 (опционально).
+
+
+- [Функция красивого вывода любого (бинарного или нет) дерева](/Extra_things/tree_printer.py)
+
+Взял со [StackOverFlow](https://stackoverflow.com/questions/15675261/displaying-a-tree-in-ascii), переписал и залил. Самому уже было лень писать, когда готовился 17-ую лабу в октябре сдавать, решил всё же переделать готовый алгоритм. Пока переписываю.
+
+
+- [Односвязный список](/Extra_things/Single-linked%20list/)
+
+Была у нас на первом курсе [лаба по плюсам](https://github.com/RomanRudin/bfu_cpp_labs/tree/main/Semester_1/Advanced/8.%20Single-linked%20list)... Вот тогда написал. А тут по теме подходит, просто так сюда добавил.
+
+
+- [Двусвязный список](/Extra_things/Double-linked%20lists/)
+
+Двусвязный список из [лабы по плюсам первго](https://github.com/RomanRudin/bfu_cpp_labs/tree/main/Semester_1/Advanced/9.%20Double-linked%20lists) курса 2023 года.
+
+
+- [Если вдруг когда-то решусь писать своё дерево](/Extra_things/NonBinary%20Tree/)
+
+Если вдруг когда-то решусь писать своё дерево.
+
+
+- [Если вдруг когда-то решусь писать своИ стэк и очередь](/Extra_things/Stack%20and%20queue/)
+
+Если вдруг когда-то решусь писать своИ стэк и очередь.
