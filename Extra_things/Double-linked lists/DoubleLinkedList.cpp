@@ -1,19 +1,21 @@
 #include <iostream>
 #include <cmath>
 
+template<class T>
 struct Node {
-    int val;
-    Node* next;
-    Node* previous;
+    T val;
+    Node<T>* next;
+    Node<T>* previous;
 };
 
-struct intList {
-    Node* root;
+template<class T>
+struct LinkedtList {
+    Node<T>* root;
 
 
     void print() { //Ready
         if (isEmpty()) return;
-        Node* current = root->next;
+        Node<T>* current = root->next;
         while (current != root) {
             std::cout << current->val << "\t";
             current = current->next;
@@ -26,7 +28,7 @@ struct intList {
     int length() { //Ready
         if (isEmpty()) return 0;
         int counter = 0;
-        Node* current = root->next;
+        Node<T>* current = root->next;
         while (current != root) {
             counter++;
             current = current->next;
@@ -41,7 +43,7 @@ struct intList {
 
 
     void appendLeft(int value) { //Ready
-        Node* elem = new Node();
+        Node<T>* elem = new Node();
         elem->val = value;
         if (isEmpty()) {
             elem->next = root;
@@ -59,7 +61,7 @@ struct intList {
 
 
     void appendRight(int value) { //Ready
-        Node* elem = new Node();
+        Node<T>* elem = new Node();
         elem->val = value;
         if (isEmpty()) {
             elem->next = root;
@@ -76,7 +78,7 @@ struct intList {
     }
 
 
-    void pop(Node* elem) { //Ready
+    void pop(Node<T>* elem) { //Ready
         if ((elem->next == root) || (elem->previous == root)) {
             elem->previous->next = root;
             elem->next->previous = root;
@@ -88,8 +90,8 @@ struct intList {
     }
 
 
-    void duplicate(Node* element) { //Ready
-        Node* duplicated = new Node();
+    void duplicate(Node<T>* element) { //Ready
+        Node<T>* duplicated = new Node();
         duplicated->val = element->val;
         duplicated->previous = element;
         duplicated->next = element->next;
@@ -99,7 +101,7 @@ struct intList {
     }
 
 
-    void swap(Node* elem1, Node* elem2) {
+    void swap(Node<T>* elem1, Node<T>* elem2) {
         int temp = elem1->val;
         elem1->val = elem2->val;
         elem2->val = temp;
@@ -132,8 +134,8 @@ int main()
     std::cin >> length;
 
     std::cout << "Please, input elements of the sequence:" << std::endl;
-    intList* list = new intList();
-    Node* root = new Node();
+    LinkedtList<int>* list = new LinkedtList<int>();
+    Node<int>* root = new Node<int>();
     root->next = nullptr;
     root->val = -1;
     root->previous = nullptr;
@@ -146,7 +148,7 @@ int main()
     std::cout << "The answer is:" << std::endl;
 
     bool startsWithThree = false;
-    Node* checker = root->next;
+    Node<int>* checker = root->next;
     while (checker != root)
     {
         if (getFirstDigit(checker->val) == 3) {
@@ -158,10 +160,10 @@ int main()
 
 
     if (!startsWithThree) {
-        Node* first = root->next;
+        Node<int>* first = root->next;
         while (first != root->previous)
         {
-            Node* second = first->next;
+            Node<int>* second = first->next;
             while (second != root)
             {
                 if (first->val % 10 < second->val % 10) {
@@ -175,7 +177,7 @@ int main()
         return 1;
     }
 
-    Node* current = root->next;
+    Node<int>* current = root->next;
 
     int test = 0;
     while (current != root) {

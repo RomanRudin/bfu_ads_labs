@@ -1,21 +1,23 @@
 ﻿#include <iostream>
 #include <cmath>
 
+template<class T>
 struct Node {
-    int val;
-    Node* next;
+    T val;
+    Node<T>* next;
 };
 
-struct intList {
-    Node* first;
-    Node* last;
+template<class T>
+struct DoubleLinkedList {
+    Node<T>* first;
+    Node<T>* last;
 
 
-    Node* getElementByIndex(int index) {
+    Node<T>* getElementByIndex(int index) {
         if (isEmpty()) throw;
         if (length() <= index) throw;
         if (index < 0) index += length();
-        Node* current = first;
+        Node<T>* current = first;
         for (int i = 0; i < index; i++) {
             current = current->next;
         }
@@ -30,7 +32,7 @@ struct intList {
 
     void print() {
         if (isEmpty()) return;
-        Node* current = first;
+        Node<T>* current = first;
         while (current) {
             std::cout << current->val << "\t";
             current = current->next;
@@ -42,7 +44,7 @@ struct intList {
     int length() {
         if (isEmpty()) return 0;
         int counter = 1;
-        Node* current = first;
+        Node<T>* current = first;
         while (current != last) {
             counter++;
             current = current->next;
@@ -57,7 +59,7 @@ struct intList {
 
 
     void append(int value) {
-        Node* elem = new Node();
+        Node<T>* elem = new Node();
         elem->val = value;
         if (isEmpty()) {
             first = elem;
@@ -84,8 +86,8 @@ struct intList {
 
 
     void duplicate(int index) {
-        Node* elem = getElementByIndex(index);
-        Node* duplicated = new Node();
+        Node<T>* elem = getElementByIndex(index);
+        Node<T>* duplicated = new Node();
         duplicated->val = elem->val;
         duplicated->next = elem->next;
         elem->next = duplicated;
@@ -103,8 +105,8 @@ struct intList {
         }
 
         int len = length() - 1;
-        Node* swap1 = getElementByIndex(index1);
-        Node* swap2 = getElementByIndex(index2);
+        Node<T>* swap1 = getElementByIndex(index1);
+        Node<T>* swap2 = getElementByIndex(index2);
 
         int temp = swap1->val;
         swap1->val = swap2->val;
@@ -112,7 +114,7 @@ struct intList {
     }
 };
 
-bool contains(int num, int contains1, int contains2) {
+bool contains(int num) {
     bool containsTOrN = false;
     while (num > 0) {
         if ((num % 10 == 3) || (num % 10 == 9)) {
@@ -150,7 +152,7 @@ int main()
     std::cin >> length;
     
     std::cout << "Please, input elements of the sequence:" << std::endl;
-    intList* list = new intList();
+    DoubleLinkedList<int>* list = new DoubleLinkedList<int>();
     for (int i = 0; i < length; i++) {
         int input;
         std::cin >> input;
