@@ -4,6 +4,11 @@
 #include <stack>
 using namespace std;
 
+bool isNumber(char a)
+{
+    return (a >= '0' && a <= '9');
+}
+
 char flipBracket(char bracket) 
 {
     switch (bracket) {
@@ -22,6 +27,22 @@ char flipBracket(char bracket)
         default:
             return bracket;
     }
+}
+
+string minusCheck(string str)
+{
+    if (str[0]=='-')
+    {
+        int i = 1;
+        while (isNumber(str[i]))
+        {
+            i++;
+        }
+        str = str.insert(i, ")");
+        str = "(0" + str;
+
+    }
+    return str;
 }
 
 bool check1 (string str)
@@ -59,13 +80,6 @@ bool check1 (string str)
     else return 0;
 }
 
-bool isNumber(char a)
-{
-    return (a >= '0' && a <= '9');
-}
-
-
-
 bool check2 (string str)
 {
     for (int i = 0; i < str.size()-1; i++)
@@ -90,6 +104,20 @@ string toRPN(string str)
 {
     stack<char> steck;
     string output;
+
+    if (str[0]=='-')
+    {
+        int i = 1;
+        while (isNumber(str[i]))
+        {
+            i++;
+        }
+        str = str.insert(i, ")");
+        str = "(0" + str;
+
+    }
+
+    cout << str << endl;
 
     for (int i = 0; i < str.size(); i++)
     {
@@ -186,6 +214,7 @@ int main()
 
     cout << "Введите выражение" << endl;
     cin >> inpt;
+    inpt = minusCheck(inpt);
 
     if (check1(inpt)==0){
         cout << "Выражение с ошибкой" << endl;
@@ -193,10 +222,8 @@ int main()
     }
     if (check2(inpt)==0){
         cout << "Выражение с ошибкой" << endl;
-        return -1;
+        return -2;
     }
-    
-    cout << inpt+'=';
     std::cout << calculate(toRPN(inpt)) << endl;
     
     return 0;
