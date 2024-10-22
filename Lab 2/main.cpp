@@ -117,8 +117,6 @@ string toRPN(string str)
 
     }
 
-    cout << str << endl;
-
     for (int i = 0; i < str.size(); i++)
     {
         if (isNumber(str[i]))
