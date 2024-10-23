@@ -59,7 +59,7 @@ Currently I'm using English, but a bit later I'll use Russian, 'cause I don't ca
 </a>
 
 1. [x] ["Задача о скобках"](/Semester_1/Labs/Lab2/lab_1.cpp)
-2. [x] ["Задача об арифметическом выражении"](/Semester_1/Labs/Lab2/lab_2.cpp)
+2. [x] ["Задача об арифметическом выражении"](/Semester_1/Labs/Lab2/lab_2.cpp) (Спасибо [choipopik](https://github.com/choipopik))
 3. [x] ["Задача о простых множителях"](/Semester_1/Labs/Lab3/lab_3.cpp)
 4. [x] [Comb sort (Сортировка методом прочесывания)](/Semester_1/Labs/Lab4/сomb_sort.cpp)
 5. [x] [Insertion sort (Сортировка вставками)](/Semester_1/Labs/Lab5/insertion_sort.cpp)
