@@ -1,10 +1,9 @@
 #include <iostream>
 #include <string>
-#include <vector>
 #include <stack>
 using namespace std;
 
-char flipBracket(char bracket) 
+char flipBracket(char bracket) //свитч для разворота скобок
 {
     switch (bracket) {
         case '(':
@@ -24,24 +23,24 @@ char flipBracket(char bracket)
     }
 }
 
-bool check (string str)
+bool check (string str) //функция проверки скобок
 {
     stack<char> stack;
     for (int i; i < str.size(); i++)
     {
-        if ((str[i] == '(') || (str[i] == '{') || (str[i] == '['))
+        if ((str[i] == '(') || (str[i] == '{') || (str[i] == '[')) //засовываем открывающие в стек
         {
             stack.push(str[i]);
         }
         else if ((str[i] == ')') || (str[i] == '}') || (str[i] == ']'))
         {
-            if (stack.empty())
+            if (stack.empty()) 
             {
                 return 0;
             }
             else
             {
-                if (flipBracket(stack.top()) == str[i])
+                if (flipBracket(stack.top()) == str[i]) //если стек не пустой то ставим в соответствие каждой открывающей скобке закрывающую, и убираем из из стека
                 {
                     stack.pop();
                 }
@@ -52,7 +51,7 @@ bool check (string str)
             }
         }
     }
-    if (stack.empty())
+    if (stack.empty())  //если в конце стек не пустой, то значит скобки расставленны неверно
     {
         return 1;
     }

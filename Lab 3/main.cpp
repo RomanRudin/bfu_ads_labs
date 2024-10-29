@@ -2,10 +2,12 @@
 
 using namespace std;
 
+ //проверяем делимость на каждое из чисел возводимых в степень(3,5,7), делим, повторяем.
+
 bool check(int xi)
 {
     int out = xi;
-    while (xi!=1)
+    while (xi!=1)             
     {
         if (xi%3==0)
         {

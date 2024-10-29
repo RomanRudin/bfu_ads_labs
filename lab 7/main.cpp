@@ -3,13 +3,13 @@
 
 using namespace std;
 
-void shell_sort(vector<int> &array)
+void shell_sort(vector<int> &array) //сортировка Шелла
 {
-    for(int d=size(array)/2;d>0;d/=2)
+    for(int d=size(array)/2;d>0;d/=2) //определяем промежуток d 
     {
         for(int i=d;i<size(array);i++)
         {
-            for(int j=i;j>0 && array[j-d]>array[j];j-d)
+            for(int j=i;j>0 && array[j-d]>array[j];j-d) //сортировка всех элементов отличающихся на d позиций
             {
                 swap(array[j-d], array[j]);
             }

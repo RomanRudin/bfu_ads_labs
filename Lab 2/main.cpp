@@ -1,15 +1,14 @@
 #include <iostream>
 #include <string>
-#include <vector>
 #include <stack>
 using namespace std;
 
-bool isNumber(char a)
+bool isNumber(char a)   //проверка является ли числом
 {
     return (a >= '0' && a <= '9');
 }
 
-char flipBracket(char bracket) 
+char flipBracket(char bracket) //разворот скобок 
 {
     switch (bracket) {
         case '(':
@@ -29,7 +28,7 @@ char flipBracket(char bracket)
     }
 }
 
-string minusCheck(string str)
+string minusCheck(string str) //проверка на минус
 {
     if (str[0]=='-')
     {
@@ -45,7 +44,7 @@ string minusCheck(string str)
     return str;
 }
 
-bool check1 (string str)
+bool check1 (string str) //проверка скобок
 {
     stack<char> stack;
     for (int i = 0; i < str.size(); i++)
@@ -80,7 +79,7 @@ bool check1 (string str)
     else return 0;
 }
 
-bool check2 (string str)
+bool check2 (string str) //проверка верности знаков
 {
     for (int i = 0; i < str.size()-1; i++)
     {
@@ -93,14 +92,14 @@ bool check2 (string str)
     return 1;
 }
 
-int Priority(char i)
+int Priority(char i) //приоритеты операций
 {
     if (i == '*' or i == '/') return 3;
     else if (i == '-' or i == '+') return 2;
     return 0;
 }
 
-string toRPN(string str)
+string toRPN(string str) //перевод в обратную польскую нотацию (ОПН)
 {
     stack<char> steck;
     string output;
@@ -160,7 +159,7 @@ string toRPN(string str)
     return output;
 }
 
-int operation(int a,int b,char sign)
+int operation(int a,int b,char sign) //функция для эмм нуу понимания что делать при считывании ОПН
 {
     switch (sign) {
         case '+':
@@ -176,7 +175,7 @@ int operation(int a,int b,char sign)
     }
 }
 
-string calculate(string str)
+string calculate(string str) //считывание ОПН и получение ответа
 {
     stack<int> steck;
     for (int i = 0; i < str.size(); i++)

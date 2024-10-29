@@ -3,9 +3,10 @@
 
 using namespace std;
 
-void choice_sort(vector<int> &array)
+void choice_sort(vector<int> &array)                    //сортировка выбором
 {
-    for(int i=0;i<size(array);i++)
+    for(int i=0;i<size(array);i++)                      //Находим номер минимального значения в текущем списке.
+                                                        //Производим обмен этого значения со значением первой неотсортированной позиции
     {
         int min = i;
         for(int j=i;j<size(array);j++)
