@@ -1,187 +1,216 @@
 #include <iostream>
-#include <stack>
-#include <vector>
 #include <string>
-#include <unordered_map>
-#include <stdexcept>
+#include <vector>
+#include <stack>
+using namespace std;
 
-//! REWRITTEN FROM PYTHON USING AI, IN NEED OF TESTING AND PROBABLY WON'T WORK
-//! REWRITTEN FROM PYTHON USING AI, IN NEED OF TESTING AND PROBABLY WON'T WORK
-//! REWRITTEN FROM PYTHON USING AI, IN NEED OF TESTING AND PROBABLY WON'T WORK
-
-// Function to check if brackets are correct
-bool checkBrackets(const std::string& expression, const std::unordered_map<char, char>& bracketMap) {
-    std::stack<char> stack;
-    for (char c : expression) {
-        if (bracketMap.find(c) != bracketMap.end()) {
-            if (stack.empty() || stack.top() != bracketMap.at(c)) {
-                return false;
-            }
-            stack.pop();
-        }
-        else if (c == '(') {
-            stack.push(c);
-        }
-    }
-    return stack.empty();
+bool isNumber(char a)
+{
+    return (a >= '0' && a <= '9');
 }
 
-// Function to tokenize the input expression
-std::vector<std::string> tokenize(const std::string& expression) {
-    std::unordered_map<std::string, int> priority = {
-        {"start", 0},
-        {"(", 1},
-        {")", 1},
-        {"*", 3},
-        {"/", 3},
-        {"+", 2},
-        {"-", 2}
-    };
-
-    std::string expr = expression;
-    expr.erase(std::remove(expr.begin(), expr.end(), ' '), expr.end());
-    expr.erase(std::remove(expr.begin(), expr.end(), '='), expr.end());
-
-    if (!checkBrackets(expr, { {')', '('} })) {
-        throw std::invalid_argument("Invalid brackets");
+char flipBracket(char bracket) 
+{
+    switch (bracket) {
+        case '(':
+            return ')';
+        case ')':
+            return '(';
+        case '{':
+            return '}';
+        case '}':
+            return '{';
+        case '[':
+            return ']';
+        case ']':
+            return '[';
+        default:
+            return bracket;
     }
-
-    for (const auto& sym : priority) {
-        size_t pos = 0;
-        while ((pos = expr.find(sym.first, pos)) != std::string::npos) {
-            expr.insert(pos, " ");
-            expr.insert(pos + sym.first.size() + 1, " ");
-            pos += sym.first.size() + 2;
-        }
-    }
-
-    std::vector<std::string> tokens;
-    size_t pos = 0;
-    while ((pos = expr.find(" ")) != std::string::npos) {
-        tokens.push_back(expr.substr(0, pos));
-        expr.erase(0, pos + 1);
-    }
-    tokens.push_back(expr);
-
-    return tokens;
 }
 
+string minusCheck(string str)
+{
+    if (str[0]=='-')
+    {
+        int i = 1;
+        while (isNumber(str[i]))
+        {
+            i++;
+        }
+        str = str.insert(i, ")");
+        str = "(0" + str;
 
-// Function to get the priority of an operator
-int getPriority(const std::string& op) {
-    std::unordered_map<std::string, int> priority = {
-        {"start", 0},
-        {"(", 1},
-        {")", 1},
-        {"*", 3},
-        {"/", 3},
-        {"+", 2},
-        {"-", 2}
-    };
-
-    return priority[op];
+    }
+    return str;
 }
 
-
-// Function to convert infix notation to RPN
-// Function to convert infix notation to RPN
-std::vector<std::string> convert(const std::vector<std::string>& tokens) {
-    std::vector<std::string> result;
-    std::stack<std::string> tempStack;
-
-    for (const auto& token : tokens) {
-        if (std::isdigit(token[0])) {
-            result.push_back(token);
-            continue;
+bool check1 (string str)
+{
+    stack<char> stack;
+    for (int i = 0; i < str.size(); i++)
+    {
+        if ((str[i] == '(') || (str[i] == '{') || (str[i] == '['))
+        {
+            stack.push(str[i]);
         }
-
-        if (token == "(") {
-            tempStack.push(token);
-        }
-        else if (token == ")") {
-            while (!tempStack.empty() && tempStack.top() != "(") {
-                result.push_back(tempStack.top());
-                tempStack.pop();
+        else if ((str[i] == ')') || (str[i] == '}') || (str[i] == ']'))
+        {
+            if (stack.empty())
+            {
+                return 0;
             }
-            if (!tempStack.empty() && tempStack.top() == "(") {
-                tempStack.pop();
-            }
-            else {
-                throw std::invalid_argument("Unbalanced parentheses");
-            }
-        }
-        else {
-            while (!tempStack.empty() && tempStack.top() != "(" && getPriority(tempStack.top()) > getPriority(token)) {
-                result.push_back(tempStack.top());
-                tempStack.pop();
-            }
-            tempStack.push(token);
-        }
-    }
-
-    while (!tempStack.empty()) {
-        if (tempStack.top() == "(") {
-            throw std::invalid_argument("Unbalanced parentheses");
-        }
-        result.push_back(tempStack.top());
-        tempStack.pop();
-    }
-
-    return result;
-}
-
-// Function to evaluate the RPN expression
-double evaluate(const std::vector<std::string>& tokens) {
-    std::stack<double> stack;
-    for (const auto& token : tokens) {
-        if (std::isdigit(token[0])) {
-            stack.push(std::stod(token));
-        }
-        else {
-            double right = stack.top();
-            stack.pop();
-            double left = stack.top();
-            stack.pop();
-
-            if (token == "+") {
-                stack.push(left + right);
-            }
-            else if (token == "-") {
-                stack.push(left - right);
-            }
-            else if (token == "*") {
-                stack.push(left * right);
-            }
-            else if (token == "/") {
-                if (right == 0) {
-                    throw std::invalid_argument("Division by zero");
+            else
+            {
+                if (flipBracket(stack.top()) == str[i])
+                {
+                    stack.pop();
                 }
-                stack.push(left / right);
+                else
+                {
+                    return 0;
+                }
             }
         }
     }
-
-    return stack.top();
+    if (stack.empty())
+    {
+        return 1;
+    }
+    else return 0;
 }
 
-int main() {
-    std::string expression;
-    std::cout << "Enter an expression: ";
-    std::getline(std::cin, expression);
-
-    try {
-        std::vector<std::string> tokens = tokenize(expression);
-        std::vector<std::string> rpn = convert(tokens); //! ERROR OCCURES while inputting (2 + 3) * 4: clling back() on empty dequ. In need of fixing
-        double result = evaluate(rpn);
-
-        std::cout << "Result: " << result << std::endl;
+bool check2 (string str)
+{
+    for (int i = 0; i < str.size()-1; i++)
+    {
+        if ((str[i] == '+' || str[i] == '-' || str[i] == '*' || str[i] == '/') &&
+        (str[i + 1] == '+' || str[i + 1] == '-' || str[i + 1] == '*' || str[i + 1] == '/' || i==0))
+        {
+            return 0;
+        }
     }
-    catch (const std::exception& e) {
-        std::cerr << "Error: " << e.what() << std::endl;
-    }
+    return 1;
+}
 
+int Priority(char i)
+{
+    if (i == '*' or i == '/') return 3;
+    else if (i == '-' or i == '+') return 2;
     return 0;
 }
-//! REWRITTEN FROM PYTHON USING AI, IN NEED OF TESTING AND PROBABLY WON'T WORK
-//! REWRITTEN FROM PYTHON USING AI, IN NEED OF TESTING AND PROBABLY WON'T WORK
-//! REWRITTEN FROM PYTHON USING AI, IN NEED OF TESTING AND PROBABLY WON'T WORK
+
+string toRPN(string str)
+{
+    stack<char> steck;
+    string output;
+
+    for (int i = 0; i < str.size(); i++)
+    {
+        if (isNumber(str[i]))
+        {
+            while (i < str.size() && isNumber(str[i]))
+            {
+            output += str[i];
+            i++;
+            }
+            output += ' ';
+            i--;
+        }
+        else if (str[i]=='(') steck.push(str[i]);
+        else if (str[i] == ')')
+        {
+            while (!steck.empty() && steck.top()!='(')
+            {
+                output += steck.top();
+                output += ' ';
+                steck.pop();
+            }
+            if (!steck.empty()) steck.pop();
+        }
+        else
+        {
+            while (!steck.empty() && Priority(steck.top())>=Priority(str[i]))
+            {
+                output += steck.top();
+                output += ' ';
+                steck.pop();
+            }
+            steck.push(str[i]);
+        }
+    }
+
+    while (!steck.empty()) {
+        output += steck.top();
+        output += ' ';
+        steck.pop();
+    }
+    return output;
+}
+
+int operation(int a,int b,char sign)
+{
+    switch (sign) {
+        case '+':
+            return a+b;
+        case '-':
+            return a-b;
+        case '*':
+            return a*b;
+        case '/':
+            return a/b;
+        default:
+            return sign;
+    }
+}
+
+string calculate(string str)
+{
+    stack<int> steck;
+    for (int i = 0; i < str.size(); i++)
+    {
+        if (isNumber(str[i]))
+        {
+            string temp = "";
+            while (i < str.size() && isNumber(str[i]))
+            {
+            temp += str[i];
+            i++;
+            }
+            steck.push(stoi(temp));
+            i--;
+        }
+        else if (!steck.empty() && str[i]!=' ')
+        {
+            int b = steck.top();
+            steck.pop();
+            int a = steck.top();
+            steck.pop();
+            if (b==0 && str[i]=='/') return "Ошибка, деление на ноль";
+            steck.push(operation(a,b,str[i]));
+        }
+    }
+    return to_string(steck.top());
+}
+
+int main()
+{
+    string inpt;
+    setlocale(LC_ALL,"rus");
+
+    cout << "Введите выражение" << endl;
+    cin >> inpt;
+    inpt = minusCheck(inpt);
+
+    if (check1(inpt)==0){
+        cout << "Выражение с ошибкой" << endl;
+        return -1;
+    }
+    if (check2(inpt)==0){
+        cout << "Выражение с ошибкой" << endl;
+        return -2;
+    }
+    std::cout << calculate(toRPN(inpt)) << endl;
+    
+    return 0;
+}
