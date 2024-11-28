@@ -238,8 +238,12 @@ Currently I'm using English, but a bit later I'll use Russian, 'cause I don't ca
 - [Введение в структуры данных](/docs/Lektsia_2_Struktury_dannykh.pptx)
 - [Виды сортировок + псевдокод к ним (господи, я искал эту хрень месяц, а потом он просто скинул эту презентацию бл#$&!)](/docs/Lektsia_3-4-5_Sortirovki.pptx)
 - [Хэш-таблицы (HashTables)](/docs/Lektsia_6_Khesh-tablitsy.pptx)
-<!-- - [Деревья (Binary Tree)](/docs/) -->
-<!-- - [Бинарные деревья поиска (Binary Search Tree, BST)](/docs/) -->
+- [Бинарные деревья](/docs/Lektsia_9-1_Binarnye_derevya_Osnovnye_ponyatia.pptx)
+- [Бинарные деревья поиска (Binary Search Tree, BST)](/docs/Lektsia_9-2_Binarnye_derevya_poiska.pptx)
+- [Красно-чёрные деревья (не требуются в лабах)](/docs/Lektsia_9-3_Krasno-chernye_derevya.pptx)
+- [АВЛ деревья (не требуются в лабах)](/docs/Lektsia_9-4_AVL_derevya.pptx)
+- [2-3 и другие деревья (не требуются в лабах)](/docs/Lektsia_9-5_2-3_i_dr_derevya.pptx)
+
 
 
 
