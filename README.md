@@ -6,7 +6,7 @@ Language was changed to Russian.
 Для просмотра кода, текстов лаб, объяснений к лабам, презентаций от препода выберите семестр:
 
 ### [Первый семестр](/markdown/Semester_1.md)
-### [Второй семестр](/markdown/Semester_1.md)
+### [Второй семестр](/markdown/Semester_2.md)
 
 
 
