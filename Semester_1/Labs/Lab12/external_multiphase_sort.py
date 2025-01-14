@@ -60,5 +60,7 @@ def external_multiphase_sort(path: str, run_size: int) -> None:
     output_file = f"{path}/output.txt"
     path += r"\Temp_files_linear"
 
+    print("External multiphase sort", input_file)
+
     temp_files = create_initial_runs(input_file, run_size, path)
     merge_files(output_file, temp_files, path)
