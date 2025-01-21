@@ -1,4 +1,7 @@
-def coin_change(coins: list, amount):
+from typing import Literal
+
+
+def coin_change(coins: list, amount: int) -> float | Literal[-1]:
     data = [float('inf')] * (amount+1)
     data[0] = 0
 
