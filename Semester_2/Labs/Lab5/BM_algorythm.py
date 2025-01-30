@@ -27,7 +27,7 @@ def get_substring(text: str, pattern: str) -> list[int]:
         text_hash -= (text.charCodeAt(i) * first_index_hash) % mod
         text_hash += mod
         text_hash *= alphabet_size
-        text_hash += text.charCodeAt(i + pattern.length)
+        text_hash += text.charCodeAt(i + len(pattern))
         text_hash %= mod
     return result
 

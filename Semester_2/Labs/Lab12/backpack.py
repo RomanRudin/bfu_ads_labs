@@ -1,5 +1,5 @@
-def backpack(W, wt, val, n):
-    data = [[0] * (W + 1) for _ in range(n+1)]
+def backpack(W, wt, val, n) -> int:
+    data = [[0] * (W + 1) for _ in range(n + 1)]
 
     for i in range(1, n + 1):
         for w in range(1, W + 1):

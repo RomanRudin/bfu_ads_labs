@@ -1,7 +1,9 @@
-def max_subarray(array: list) -> tuple[list, float]:
+def the_largest_subarray(array: list) -> tuple[list, float]:
     max_sum = float('-inf')
     sum = 0
     starting_index, ending_index = 0, 0
+    print(array)
+
 
     for index, elem in enumerate(array):
         sum += elem
