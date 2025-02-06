@@ -9,3 +9,14 @@ if __name__ == "__main__":
     Tests.dynamic_programming_tests.test_coin_exchange()
     Tests.dynamic_programming_tests.test_travelling_salesman()
     Tests.dynamic_programming_tests.test_egg_drop()
+
+#
+#Please, give me a couple of examples of tests for the largest subarray exercise in this format:
+#[{
+#            "input": (),
+#            "expected_result": ()
+#        }, {
+#            "input": (),
+#            "expected_result": ()
+#        }]
+#

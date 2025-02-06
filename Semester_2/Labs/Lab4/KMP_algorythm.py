@@ -1,7 +1,7 @@
 def find_borders(pattern: str) -> list[int]: 
     borders = [0] * len(pattern)
     current_index = 0
-    for i in range(1, len(pattern) + 1) :
+    for i in range(1, len(pattern)):
         while ((current_index > 0) and (pattern[current_index] != pattern[i])):
             current_index = borders[current_index - 1]
         if (pattern[current_index] == pattern[i]):
@@ -10,8 +10,9 @@ def find_borders(pattern: str) -> list[int]:
     return borders
 
 
-def kmp_algorythm(text: str, pattern: str) -> None:
-    borders = find_borders(pattern)
+def kmp_algorythm(text: str, pattern: str) -> list[int]:
+    borders = find_borders(text)
+    print(borders)
     result = []
     compare_index = 0
 
@@ -27,3 +28,6 @@ def kmp_algorythm(text: str, pattern: str) -> None:
             compare_index = borders[len(pattern) - 1]
 
     return result
+
+# if __name__ == "__main__":
+    # print(kmp_algorythm('abcababdabaaba', 'abaaba'))

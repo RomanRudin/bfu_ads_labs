@@ -1,11 +1,15 @@
-def backpack(W, wt, val, n) -> int:
-    data = [[0] * (W + 1) for _ in range(n + 1)]
+# max_weight - maximum weight
+# n - maximum quantity
+# weights_list - weight of 
+
+def backpack(max_weight: int, n: int, weights_list: list[int], value: list[int]) -> int:
+    data = [[0] * (max_weight + 1) for _ in range(n + 1)]
 
     for i in range(1, n + 1):
-        for w in range(1, W + 1):
-            if wt[i - 1] <= w:
-                data[i][w] = max(val[i - 1] + data[i - 1][w - wt[i - 1]], data[i - 1][w])
+        for weight in range(1, max_weight + 1):
+            if weights_list[i - 1] <= weight:
+                data[i][weight] = max(value[i - 1] + data[i - 1][weight - weights_list[i - 1]], data[i - 1][weight])
             else:
-                data[i][w] = data[i - 1][w]
+                data[i][weight] = data[i - 1][weight]
 
-    return data[n][W]
+    return data[n][max_weight]

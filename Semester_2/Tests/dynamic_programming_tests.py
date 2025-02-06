@@ -60,11 +60,11 @@ from Labs.Lab7.the_largest_subarray import *
 
 def test_the_largest_subarray() -> bool:
     tests = [{
-            "input": [[-1, 3, -2, 5, 3, -5, 2, 2]],
-            "expected_result": [[3, -2, 5, 3], 9]
+            "input": ([-1, 3, -2, 5, 3, -5, 2, 2]),
+            "expected_result": ([3, -2, 5, 3], 9)
         }, {
-            "input": [{-10, -20, -30, -40, -50, -60}],
-            "expected_result": [[-10], -10]
+            "input": ({-10, -20, -30, -40, -50, -60}),
+            "expected_result": ([-10], -10)
         }]
     return test(the_largest_subarray, *tests)
     
