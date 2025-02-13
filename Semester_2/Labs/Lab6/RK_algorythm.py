@@ -1,43 +1,33 @@
 def compareText(text: str, index: int, pattern: str) -> bool:
-    for i in range(len(pattern)):
-        if (pattern[i] != text[index + i]):
+    for i, sym in enumerate(pattern):
+        if (sym != text[index + i]):
             return False
     return True
 
 
 
+
+def simple_hash_function(string: str) -> int:
+    pass
+
+
+def better_hash_function(string: str) -> int:
+    pass
+
+
+
+
 def rk_algorythm(text: str, pattern: str) -> list[int]:
     result = []
-    alphabetSize = 256
-    mod = 9973
+    patternHash = hash(pattern)
 
-    patternHash = ord(pattern[0]) % mod
-    textHash = ord(text[0]) % mod
-
-    firstIndexHash = 1
-
-    for i in range(1, len(pattern)):
-        patternHash *= alphabetSize
-        patternHash += ord(pattern[i])
-        patternHash %= mod
-
-        textHash *= alphabetSize
-        textHash += ord(text[i])
-        textHash %= mod
-
-        firstIndexHash *= alphabetSize
-        firstIndexHash %= mod
-
-    for i in range(len(text) - len(pattern)):
+    for i in range(len(text) - len(pattern) + 1):
+        textHash = hash(text[i:(len(pattern) + i)])
+        # print(f"i = {i} \t {pattern} : {patternHash}, \t {text[i:(len(pattern) + i)]} : {textHash}")
         if ((patternHash == textHash) and compareText(text, i, pattern)):
             result.append(i)
-
-        if (i == len(text) - len(pattern)): break
-
-        textHash -= (ord(text[i]) * firstIndexHash) % mod
-        textHash += mod
-        textHash *= alphabetSize
-        textHash += ord(text[i + len(pattern)])
-        textHash %= mod
-
     return result
+
+# if __name__ == "__main__":
+    # print(rk_algorythm('abca', 'abca'))
+    # print(rk_algorythm('abcababdabaaba', 'abaaba'))
