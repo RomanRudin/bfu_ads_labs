@@ -35,4 +35,5 @@ def bm_algorythm_bad_character(text: str, pattern: str) -> list[int]:
     return result
 
 if __name__ == "__main__":
-    print(bm_algorythm_bad_character('abcababdabaaba', 'abaaba'))
+    print(f"Result of bm_algorythm: {bm_algorythm_bad_character('abca', 'abca')}")
+    print(f"Result of bm_algorythm: {bm_algorythm_bad_character('abcababdabaaba', 'abaaba')}")

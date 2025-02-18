@@ -1,3 +1,6 @@
+
+#TODO
+
 def bm_algorythm_good_suffix(text: str, pattern: str) -> list[int]:
     pass
 
@@ -36,3 +39,6 @@ def set_shifts_for_prefix(shifts: list[int], borderPositions: list[int], pattern
 
         if (i == prefixBorder):
             prefixBorder = borderPositions[prefixBorder]
+
+if __name__ == "__main__":
+    print(bm_algorythm_good_suffix('abcababdabaaba', 'abaaba'))

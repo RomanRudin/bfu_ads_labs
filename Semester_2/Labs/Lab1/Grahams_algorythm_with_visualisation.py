@@ -1,17 +1,19 @@
 import matplotlib.pyplot as plt
 from matplotlib.patches import PathPatch
 from matplotlib.path import Path
+from typing import NewType
 import math
 
+Point = NewType("Point", tuple[float, float])
 
 
-def polar_angle(p0: tuple[int, int], p1: tuple[int, int]) -> float:
+def polar_angle(p0: Point, p1: Point) -> float:
     return math.atan2(p1[1] - p0[1], p1[0] - p0[0])
 
-def cross_product(o: tuple[int, int], a: tuple[int, int], b: tuple[int, int]) -> int:
+def cross_product(o: Point, a: Point, b: Point) -> float:
     return (a[0] - o[0]) * (b[1] - o[1]) - (a[1] - o[1]) * (b[0] - o[0])
 
-def graham_scan(points: list[tuple[int, int]]) -> list[tuple[int, int]]:
+def graham_scan(points: list[Point]) -> list[Point]:
     assert len(points) >= 3
 
     starting_point = min(points, key=lambda p: (p[1], p[0]))

@@ -1,7 +1,3 @@
-# max_weight - maximum weight
-# n - maximum quantity
-# weights_list - weight of 
-
 def backpack(max_weight: int, n: int, weights_list: list[int], value: list[int]) -> int:
     data = [[0] * (max_weight + 1) for _ in range(n + 1)]
 
@@ -13,3 +9,7 @@ def backpack(max_weight: int, n: int, weights_list: list[int], value: list[int])
                 data[i][weight] = data[i - 1][weight]
 
     return data[n][max_weight]
+
+
+if __name__ == "__main__":
+    print(backpack(10, 5, [1, 2, 3, 4, 10], [2, 3, 7, 9, 20])) #? Expected 21
