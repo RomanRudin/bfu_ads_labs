@@ -16,7 +16,9 @@ def test(function: callable, one_arg=False, show_results=True, *tests_data) -> b
         print(bcolors.OKBLUE + f'Testing {function.__name__} algorythm...' + bcolors.ENDC)
     for test_data in tests_data:
         input, expected_result = test_data["input"], test_data["expected_result"]
+        print(input)
         if one_arg:
+            print(input[0])
             result = function(input[0])
         else:
             result = function(*input)
@@ -63,10 +65,19 @@ def test_the_largest_subarray() -> bool:
             "input": ([-1, 3, -2, 5, 3, -5, 2, 2]),
             "expected_result": ([3, -2, 5, 3], 9)
         }, {
-            "input": ({-10, -20, -30, -40, -50, -60}),
+            "input": ([-10, -20, -30, -40, -50, -60]),
             "expected_result": ([-10], -10)
+        }, {
+            "input": ([2, -1, 2, -1, 2]),
+            "expected_result": ([2, -1, 2, -1, 2], 4)
+        }, {
+            "input": ([-1, 0, -2]),
+            "expected_result": ([0], 0)
+        }, {
+            "input": ([-5, 10, -4, -2, 8]),
+            "expected_result": ([10, -4, -2, 8], 12)
         }]
-    return test(the_largest_subarray, *tests)
+    return test(the_largest_subarray, tests)
     
 
 
@@ -74,13 +85,22 @@ from Labs.Lab8.coin_exchange import *
 
 def test_coin_exchange() -> bool:
     tests = [{
-            "input": (),
-            "expected_result": ()
+            "input": ([1, 3, 4], 6),
+            "expected_result": (2)
         }, {
-            "input": (),
-            "expected_result": ()
+            "input": ([1], 10),
+            "expected_result": (10)
+        }, {
+            "input": ([1, 2, 5], 100),
+            "expected_result": (20)
+        }, {
+            "input": ([3, 5], 7),
+            "expected_result": (-1)
+        }, {
+            "input": ([1, 5, 10, 25], 30),
+            "expected_result": (2)
         }]
-    return test(coin_exchange, *tests)
+    return test(coin_exchange, tests)
 
 
 
@@ -94,7 +114,7 @@ def test_travelling_salesman() -> bool:
             "input": (),
             "expected_result": ()
         }]
-    return test(travelling_salesman, *tests)
+    return test(travelling_salesman, tests)
 
 
 
@@ -108,4 +128,4 @@ def test_egg_drop() -> bool:
             "input": (),
             "expected_result": ()
         }]
-    return test(egg_drop, *tests)
+    return test(egg_drop, tests)
