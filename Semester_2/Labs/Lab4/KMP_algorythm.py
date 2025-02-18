@@ -29,6 +29,6 @@ def kmp_algorythm(text: str, pattern: str) -> list[int]:
 
     return result
 
-if __name__ == "__main__":
-    print(f"Result of kmp_algorythm: {kmp_algorythm('abca', 'abca')}")
-    print(f"Result of kmp_algorythm: {kmp_algorythm('abcababdabaaba', 'abaaba')}")
+# if __name__ == "__main__":
+#     print(f"Result of kmp_algorythm: {kmp_algorythm('abca', 'abca')}")
+#     print(f"Result of kmp_algorythm: {kmp_algorythm('abcababdabaaba', 'abaaba')}")

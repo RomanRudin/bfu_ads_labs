@@ -38,10 +38,10 @@ if __name__ == "__main__":
 
 
     with open("Semester_2/Labs/Lab1/points.txt", 'r', encoding='utf-8') as file:
-        N = int(file.readline().strip())
-        assert N >= 3
-        for _ in range(N):
-            points.append(tuple(map(float, file.readline().strip().split())))
+        # N = int(file.readline().strip())
+        for line in file.read().splitlines():
+            points.append(tuple(map(float, line.strip().split())))
+        assert len(points) >= 3
 
     convex_hull = graham_scan(points)
 

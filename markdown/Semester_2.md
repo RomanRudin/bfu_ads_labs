@@ -5,6 +5,7 @@
 - - [Python](#Labs-done-python)
 - - [C++](#Labs-done-c++)
 - [Тексты лаб](#Labs-text)
+- [Условия автомата](#Automatic-mark-conditions)
 - [Объяснения лаб](#Explanation-labs)
 - [Презентации от препода](#Presentations)
 - [Некоторые штуки, которые я дополнительно делал](/markdown/extra_things.md)
@@ -28,13 +29,13 @@
 ### Python <img src="https://github.com/devicons/devicon/blob/master/icons/python/python-original.svg"  title="Python" alt="Python" width="40" height="40"/>&nbsp;
 </a>
 
-1. [ ] [Алгоритм проверки точек на выпуклый многоугольник](#lab-1-explanation)
+1. [x] [Алгоритм проверки точек на выпуклый многоугольник](#lab-1-explanation)
 2. [ ] [Алгоритм проверки точек на вершины вложенных треугольников]()
 3. [ ] [Алгоритм поиска по образцу с помощью конечного автомата]()
-4. [ ] [Алгоритм Кнута-Морриса-Пратта для поиска по образ]()
-5. [ ] [Алгоритм Бойера-Мура для поиска по образцу]()
+4. [x] [Алгоритм Кнута-Морриса-Пратта для поиска по образ](/Semester_2/Labs/Lab4/KMP_algorythm.py)
+5. [x] [Алгоритм Бойера-Мура для поиска по образцу](/Semester_2/Labs/Lab5/BM_algorythm_bad_character.py)
 6. [ ] [Алгоритм Рабина для поиска по образцу]()
-7. [ ] [Задача о самом большом подмассиве]()
+7. [x] [Задача о самом большом подмассиве](/Semester_2/Labs/Lab7/the_largest_subarray.py)
 8. [ ] [Проблема размена монет]()
 9. [ ] [Задача коммивояжера]()
 10. [ ] [Задача о бросании яиц]()
@@ -48,7 +49,7 @@
 ### C++ <img src="https://github.com/devicons/devicon/blob/master/icons/cplusplus/cplusplus-original.svg"  title="Python" alt="Python" width="40" height="40"/>&nbsp;
 </a>
 
-1. [ ] [Алгоритм проверки точек на выпуклый многоугольник](#lab-1-explanation)
+1. [ ] [Алгоритм проверки точек на выпуклый многоугольник]()
 2. [ ] [Алгоритм проверки точек на вершины вложенных треугольников]()
 3. [ ] [Алгоритм поиска по образцу с помощью конечного автомата]()
 4. [ ] [Алгоритм Кнута-Морриса-Пратта для поиска по образ]()
@@ -116,6 +117,43 @@
 
 
 
+<a name="Automatic-mark-conditions">
+
+# Условия автомата
+</a>
+
+Добрый день 
+Пишу требования к лабораторным и автоматам 
+Также, сдаем на любом языке программирования. По автоматам – будут только 5ки, чтобы ее получить, нужно каждую лабораторную реализовывать самостоятельно и хорошо разбираться в лабораторной теме. Также для автомата в некоторых лабораторных может потребоваться реализовать более сложный алгоритм 
+
+1. -я лабораторная. Сама по себе не из простых. В задании написано, проверить, существует ли выпуклая оболочка. Это не совсем корректно(она существует, если точек больше двух и они не лежат на прямой). Нужно найти саму оболочку и вывести точки, входящие в нее. Алгоритм на выбор – Грэхем, Джарвис 
+ 
+2. -я лабораторная.  "Наивный" алгоритм перебора 6 точек пройдет не на автомат. На автомат нужно использовать какие-то идеи, чтобы уменьшить временную сложность алгоритма
+
+3. -я. Достаточно реализовать автомат, который будете рассматривать на лекции
+
+4. -я. КМП – здесь нужно использовать префикс-функцию. Нужно понимать, что она значит (её определение). На автомат понимать, как она строится (доказательство времени работы необязательно)
+
+5. -я. БМ – здесь просто реализовать этот алгоритм
+
+6. -я. РК – здесь хэши, на автомат время работы должно быть линейное (пересчет хеша за O(1)), не на автомат не буду строго смотреть на это
+
+7. -я. Либо придумать динамическое программирование, либо использовать алгоритм Кадана. Сложность O(n).
+
+8. -я. Реализовать динамическое программирование. 
+
+9. -я. Не на автомат - перебором. На автомат – динамическое программирование по подмножествам.
+
+10. -я. Уметь объяснить решение.
+
+11. -я. Перебор.
+
+12. -я. Перебор или динамическое программирование.
+
+13. -я. Перебор - не на автомат. Динамическое программирование по подмножествам - на автомат.
+
+
+
 
 <a name="Explanation-labs">
 
@@ -124,35 +162,27 @@
 
 ### Нахождение выпуклой оболочки множества точек
 
-1. https://lvngd.com/blog/convex-hull-graham-scan-algorithm-python/
+1. [Стандартное решение Python](/Semester_2/Labs/Lab1/Grahams_algorythm.py), [решение Python с визуализацией через matplotlib](/Semester_2/Labs/Lab1/Grahams_algorythm_with_visualisation.py)
 
-https://thealgorithms.vercel.app/algorithm/graham-scan
-
-https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%93%D1%80%D1%8D%D1%85%D0%B5%D0%BC%D0%B0#:~:text=%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%20%D0%93%D1%80%D1%8D%D1%85%D0%B5%D0%BC%D0%B0%20%E2%80%94%20%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%20%D0%BF%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B5%D0%BD%D0%B8%D1%8F,%D0%B8%D1%85%20%D0%BE%D0%B1%D1%85%D0%BE%D0%B4%D0%B0%20%D0%BF%D1%80%D0%BE%D1%82%D0%B8%D0%B2%20%D1%87%D0%B0%D1%81%D0%BE%D0%B2%D0%BE%D0%B9%20%D1%81%D1%82%D1%80%D0%B5%D0%BB%D0%BA%D0%B8
-
-https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%94%D0%B6%D0%B0%D1%80%D0%B2%D0%B8%D1%81%D0%B0
+[Почитать про алгоритм](https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%93%D1%80%D1%8D%D1%85%D0%B5%D0%BC%D0%B0#:~:text=%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%20%D0%93%D1%80%D1%8D%D1%85%D0%B5%D0%BC%D0%B0%20%E2%80%94%20%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%20%D0%BF%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B5%D0%BD%D0%B8%D1%8F,%D0%B8%D1%85%20%D0%BE%D0%B1%D1%85%D0%BE%D0%B4%D0%B0%20%D0%BF%D1%80%D0%BE%D1%82%D0%B8%D0%B2%20%D1%87%D0%B0%D1%81%D0%BE%D0%B2%D0%BE%D0%B9%20%D1%81%D1%82%D1%80%D0%B5%D0%BB%D0%BA%D0%B8)
 
 2. 
 
 
 ### Поиск по образцу
 
-3.  https://translated.turbopages.org/proxy_u/en-ru.ru.59cc7ff6-6787f565-c87772e8-74722d776562/https/www.geeksforgeeks.org/finite-automata-algorithm-for-pattern-searching/
+3.  <!-- https://translated.turbopages.org/proxy_u/en-ru.ru.59cc7ff6-6787f565-c87772e8-74722d776562/https/www.geeksforgeeks.org/finite-automata-algorithm-for-pattern-searching/ -->
 
-4.  https://habr.com/ru/articles/307220/
+4. [Читаем посложнее](https://habr.com/ru/articles/307220/), [Читаем попроще](https://habr.com/ru/articles/658779/)
 
-https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%9A%D0%BD%D1%83%D1%82%D0%B0_%E2%80%94_%D0%9C%D0%BE%D1%80%D1%80%D0%B8%D1%81%D0%B0_%E2%80%94_%D0%9F%D1%80%D0%B0%D1%82%D1%82%D0%B0
+5. [Читаем](https://habr.com/ru/articles/660767/). Мы рассматривали на паре только первую эвристику.
 
-https://www.geeksforgeeks.org/kmp-algorithm-for-pattern-searching/
-
-5. 
-
-6. https://habr.com/ru/articles/662678/
+6. [Читаем](https://habr.com/ru/articles/662678/)
 
 
 ### Динамическое программирование
 
-7. https://proglib.io/p/25-algoritmov-dinamicheskogo-programmirovaniya-kotorye-dolzhen-znat-kazhdyy-programmist-2023-05-30
+7. <!-- https://proglib.io/p/25-algoritmov-dinamicheskogo-programmirovaniya-kotorye-dolzhen-znat-kazhdyy-programmist-2023-05-30 -->
 
 8. 
 
@@ -163,7 +193,7 @@ https://www.geeksforgeeks.org/kmp-algorithm-for-pattern-searching/
 
 ### NP-полные задачи
 
-11. https://publications.hse.ru/pubs/share/folder/0rhqzr8ukk/133671897.pdf
+11. <!-- https://publications.hse.ru/pubs/share/folder/0rhqzr8ukk/133671897.pdf -->
 
 12. 
 

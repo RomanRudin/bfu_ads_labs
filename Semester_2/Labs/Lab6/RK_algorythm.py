@@ -16,6 +16,6 @@ def rk_algorythm(text: str, pattern: str) -> list[int]:
             result.append(i)
     return result
 
-if __name__ == "__main__":
-    print(f"Result of rk_algorythm: {rk_algorythm('abca', 'abca')}")
-    print(f"Result of rk_algorythm: {rk_algorythm('abcababdabaaba', 'abaaba')}")
+# if __name__ == "__main__":
+#     print(f"Result of rk_algorythm: {rk_algorythm('abca', 'abca')}")
+#     print(f"Result of rk_algorythm: {rk_algorythm('abcababdabaaba', 'abaaba')}")
