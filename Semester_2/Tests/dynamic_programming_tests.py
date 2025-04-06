@@ -114,7 +114,7 @@ def test_travelling_salesman() -> bool:
             "input": (),
             "expected_result": ()
         }]
-    return test(travelling_salesman, tests)
+    return test(TSP, tests)
 
 
 
