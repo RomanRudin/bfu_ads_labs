@@ -48,7 +48,7 @@
 
 <a name="Labs-done-c++">
 
-### C++ <img src="https://github.com/devicons/devicon/blob/master/icons/cplusplus/cplusplus-original.svg"  title="Python" alt="Python" width="40" height="40"/>&nbsp;
+### C++ <img src="https://github.com/devicons/devicon/blob/master/icons/cplusplus/cplusplus-original.svg"  title="C++" alt="C++" width="40" height="40"/>&nbsp;
 </a>
 
 1. [x] ["Задача о скобках"](/Semester_1/Labs/Lab2/lab_1.cpp)

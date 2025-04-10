@@ -178,7 +178,8 @@ def find_nested_triangles(points: list[Point]) -> bool:
 
 
 
-points = [(0,0), (2,2), (1,1), (4,0), (5,1)]
-print("Are triangles nested:", find_nested_triangles(points))
-points = [(0,0), (2,2), (4,0), (5,1)]
-print("Are triangles nested:", find_nested_triangles(points))
+if __name__ == "__main__":
+    points = [(0,0), (2,2), (1,1), (4,0), (5,1)]
+    print("Are triangles nested:", find_nested_triangles(points))
+    points = [(0,0), (2,2), (4,0), (5,1)]
+    print("Are triangles nested:", find_nested_triangles(points))

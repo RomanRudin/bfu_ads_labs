@@ -30,23 +30,23 @@
 </a>
 
 1. [x] [Алгоритм проверки точек на выпуклый многоугольник](#lab-1-explanation)
-2. [ ] [Алгоритм проверки точек на вершины вложенных треугольников]()
-3. [ ] [Алгоритм поиска по образцу с помощью конечного автомата]()
+2. [ ] [Алгоритм проверки точек на вершины вложенных треугольников](/Semester_2/Labs/Lab2/lab2.py) <!-- Need to be checked by teacher -->
+3. [ ] [Алгоритм поиска по образцу с помощью конечного автомата](/Semester_2/Labs/Lab3/Finite_automata_patter_searching_algorythm.py)
 4. [x] [Алгоритм Кнута-Морриса-Пратта для поиска по образ](/Semester_2/Labs/Lab4/KMP_algorythm.py)
 5. [x] [Алгоритм Бойера-Мура для поиска по образцу](/Semester_2/Labs/Lab5/BM_algorythm_bad_character.py)
-6. [ ] [Алгоритм Рабина для поиска по образцу]()
+6. [ ] [Алгоритм Рабина для поиска по образцу](/Semester_2/Labs/Lab6/RK_algorythm.py) <!-- Need to be checked by teacher -->
 7. [x] [Задача о самом большом подмассиве](/Semester_2/Labs/Lab7/the_largest_subarray.py)
-8. [ ] [Проблема размена монет]()
-9. [ ] [Задача коммивояжера]()
-10. [ ] [Задача о бросании яиц]()
-11. [ ] [задача о раскраске графа]()
-12. [ ] [Дискретная задача о рюкзаке]()
-13. [ ] [Задача о раскладке по ящикам]()
+8. [ ] [Проблема размена монет](/Semester_2/Labs/Lab8/coin_exchange.py)
+9. [ ] [Задача коммивояжера](/Semester_2/Labs/Lab9/travelling_salesman.py)
+10. [ ] [Задача о бросании яиц](/Semester_2/Labs/Lab10/egg_drop.py)
+11. [ ] [задача о раскраске графа](/Semester_2/Labs/Lab11/graph_painting.py)
+12. [ ] [Дискретная задача о рюкзаке](/Semester_2/Labs/Lab12/backpack.py) <!-- Need to be checked by teacher.  But is it right??? -->
+13. [ ] [Задача о раскладке по ящикам](/Semester_2/Labs/Lab13/boxes.py)
 
 
 <a name="Labs-done-c++">
 
-### C++ <img src="https://github.com/devicons/devicon/blob/master/icons/cplusplus/cplusplus-original.svg"  title="Python" alt="Python" width="40" height="40"/>&nbsp;
+### C++ <img src="https://github.com/devicons/devicon/blob/master/icons/cplusplus/cplusplus-original.svg"  title="C++" alt="C++" width="40" height="40"/>&nbsp;
 </a>
 
 1. [ ] [Алгоритм проверки точек на выпуклый многоугольник]()

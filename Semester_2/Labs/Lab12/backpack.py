@@ -13,3 +13,7 @@ def backpack(max_weight: int, n: int, weights_list: list[int], value: list[int])
 
 if __name__ == "__main__":
     print(backpack(10, 5, [1, 2, 3, 4, 10], [2, 3, 7, 9, 20])) #? Expected 21
+    print(backpack(10, 5, [1, 2, 3, 4, 10], [2, 3, 7, 9, 20])) #? Expected 21
+    print(backpack(10, 5, [1, 2, 3, 4, 10], [2, 3, 7, 9, 20])) #? Expected 21
+    print(backpack(10, 5, [1, 2, 3, 4, 10], [2, 3, 7, 9, 20])) #? Expected 21
+    print(backpack(10, 5, [1, 2, 3, 4, 10], [2, 3, 7, 9, 20])) #? Expected 21

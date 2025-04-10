@@ -1,6 +1,6 @@
 def rk_algorythm(text: str, pattern: str) -> list[int]:
     result = []
-    patternHash = hash(pattern)
+    patternHash = hash(pattern) #? Python internal hash() function has a constant complexity
 
     for i in range(len(text) - len(pattern) + 1):
         textHash = hash(text[i:(len(pattern) + i)])
