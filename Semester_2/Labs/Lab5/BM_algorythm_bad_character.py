@@ -21,7 +21,9 @@ def bm_algorythm_bad_character(text: str, pattern: str) -> list[int]:
         if (current_index == -1):
             result.append(shift)
             if (shift + len(pattern)) < len(text):
-                shift += len(pattern) - symbol_indexes[text[shift + len(pattern)]]
+                if text[shift + len(pattern)] in symbol_indexes.keys():
+                    shift -= symbol_indexes[text[shift + len(pattern)]]
+                shift += len(pattern)
             else:
                 shift += 1
 
@@ -34,6 +36,7 @@ def bm_algorythm_bad_character(text: str, pattern: str) -> list[int]:
 
     return result
 
-# if __name__ == "__main__":
-#     print(f"Result of bm_algorythm: {bm_algorythm_bad_character('abca', 'abca')}")
-#     print(f"Result of bm_algorythm: {bm_algorythm_bad_character('abcababdabaaba', 'abaaba')}")
+if __name__ == "__main__":
+    print(f"Result of bm_algorythm: {bm_algorythm_bad_character('abca', 'abca')}")
+    print(f"Result of bm_algorythm: {bm_algorythm_bad_character('abcababdabaaba', 'abaaba')}")
+    print(f"Result of bm_algorythm: {bm_algorythm_bad_character('abcababdabaabadd', 'abaaba')}")
