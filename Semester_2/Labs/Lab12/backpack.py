@@ -1,19 +1,18 @@
-def backpack(max_weight: int, n: int, weights_list: list[int], value: list[int]) -> int:
-    data = [[0] * (max_weight + 1) for _ in range(n + 1)]
-
+def backpack(W: int, weights: list[int], values: list[int], n: int) -> int:
+    dp = [[0 for _ in range(W + 1)] for _ in range(n + 1)]
+    
     for i in range(1, n + 1):
-        for weight in range(1, max_weight + 1):
-            if weights_list[i - 1] <= weight:
-                data[i][weight] = max(value[i - 1] + data[i - 1][weight - weights_list[i - 1]], data[i - 1][weight])
+        for w in range(W + 1):
+            if weights[i - 1] <= w:
+                dp[i][w] = max(dp[i - 1][w], 
+                               dp[i - 1][w - weights[i - 1]] + values[i - 1])
             else:
-                data[i][weight] = data[i - 1][weight]
-
-    return data[n][max_weight]
-
+                dp[i][w] = dp[i - 1][w]
+    
+    return dp[n][W]
+    
+    
 
 if __name__ == "__main__":
-    print(backpack(10, 5, [1, 2, 3, 4, 10], [2, 3, 7, 9, 20])) #? Expected 21
-    print(backpack(10, 5, [1, 2, 3, 4, 10], [2, 3, 7, 9, 20])) #? Expected 21
-    print(backpack(10, 5, [1, 2, 3, 4, 10], [2, 3, 7, 9, 20])) #? Expected 21
-    print(backpack(10, 5, [1, 2, 3, 4, 10], [2, 3, 7, 9, 20])) #? Expected 21
-    print(backpack(10, 5, [1, 2, 3, 4, 10], [2, 3, 7, 9, 20])) #? Expected 21
+    print(backpack(10, [2, 3, 5, 7], [10, 15, 20, 25], 4)) #? Expected 45
+    print(backpack(10, [1, 2, 3, 4, 10], [2, 3, 7, 9, 20], 5)) #? Expected 21
