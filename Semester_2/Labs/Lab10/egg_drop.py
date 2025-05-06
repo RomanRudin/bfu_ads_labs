@@ -22,10 +22,11 @@ def egg_drop(eggs, floors) -> int:
         
         while remaining_throws > 0:
             current_floor += step
-            print(f"Throw from floor: {current_floor}")
             remaining_throws -= 1
             if current_floor >= floors:
+                print(f"Throw from floor: {floors}")
                 break
+            print(f"Throw from floor: {current_floor}")
             step = dp[eggs - 1][remaining_throws - 1] + 1
     
     return min_throws

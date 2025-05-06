@@ -13,3 +13,5 @@ if __name__ == "__main__":
     print(f"Result of rk_algorythm: {rk_algorythm('abcababdabaaba', 'abaaba')}")
     print(f"Result of rk_algorythm: {rk_algorythm('abcababdabaab', 'abaaba')}")
     print(f"Result of rk_algorythm: {rk_algorythm('abcababdabaab', 'ab')}")
+
+#TODO Движение окна на 1 символ, хэширование своё
