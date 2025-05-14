@@ -5,16 +5,17 @@ import (
 )
 
 func count(coins []int, sum int) int {
-	dp := make([]int, sum+1)
+	arr := make([]int, sum+1) //здесь храним кол-во решений для i-го
+	//Нам нужна сумма+1 строк, так как слайс строится снизу вверх с использованием базового случая (сумма = 0)
 
-	dp[0] = 1
+	arr[0] = 1 //он нам нужен для таких случаев, что например данная величина будет 0
 
-	for i := range len(coins) {
+	for i := range len(coins) { // внешний цикл итерируется по номиналам, внутренний -- по целевой сумме
 		for j := coins[i]; j <= sum; j++ {
-			dp[j] += dp[j-coins[i]]
+			arr[j] += arr[j-coins[i]]
 		}
 	}
-	return dp[sum]
+	return arr[sum]
 }
 
 func main() {
