@@ -1,18 +1,21 @@
 def the_largest_subarray(array: list) -> tuple[list, float]:
-    max_sum = float('-inf')
-    sum = 0
-    starting_index, ending_index = 0, 0
+    max_sum = current_sum = array[0]
+    start = end = 0
+    temp_start = 0
 
-    for index, elem in enumerate(array):
-        sum += elem
-        if sum > max_sum:
-            max_sum = sum
-            ending_index = index
-        if sum < 0:
-            sum = 0
-            starting_index = index + 1
+    for i in range(1, len(array)):
+        if array[i] > current_sum + array[i]:
+            current_sum = array[i]
+            temp_start = i
+        else:
+            current_sum += array[i]
 
-    return (array[starting_index:ending_index + 1], max_sum) if max_sum > 0 else ([max_sum], max_sum)
+        if current_sum > max_sum:
+            max_sum = current_sum
+            start = temp_start
+            end = i
+
+    return (array[start:end + 1], max_sum)
 
 
 if __name__ == "__main__":
