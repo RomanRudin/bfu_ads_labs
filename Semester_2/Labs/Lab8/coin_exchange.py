@@ -1,16 +1,32 @@
-from typing import Literal
+from typing import List, Union, Literal
 
+def coin_exchange(coins: List[int], amount: int) -> Union[int, Literal[-1]]:
+    if amount < 0:
+        return -1
+    if amount == 0:
+        return (0, [])
 
-def coin_exchange(coins: list, amount: int) -> float | Literal[-1]:
-    data = [float('inf')] * (amount + 1)
-    data[0] = 0
+    dp = [float('inf')] * (amount + 1)
+    dp[0] = 0
+    coin_used = [-1] * (amount + 1)
 
     for i in range(1, amount + 1):
         for coin in coins:
-            if coin <= i:
-                data[i] = min(data[i], data[i - coin] + 1)
+            if coin <= i and dp[i - coin] + 1 < dp[i]:
+                dp[i] = dp[i - coin] + 1
+                coin_used[i] = coin
 
-    return data[amount] if data[amount] != float('inf') else -1
+    if dp[amount] == float('inf'):
+        return -1
+
+    coins_used = []
+    remaining = amount
+    while remaining > 0:
+        coin = coin_used[remaining]
+        coins_used.append(coin)
+        remaining -= coin
+
+    return (dp[amount], coins_used)
 
 
 if __name__ == "__main__":
