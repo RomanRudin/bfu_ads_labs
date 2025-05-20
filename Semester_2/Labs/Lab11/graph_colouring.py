@@ -1,8 +1,11 @@
 
 def graph_coloring(graph: list[list[int]], num_colors: int) -> dict[int, int]:
     colors = {}
+    nodes_ordered_by_degree = sorted(
+        range(len(graph)), key=lambda x: -len(graph[x])
+    )
 
-    for node in range(len(graph)):
+    for node in nodes_ordered_by_degree:
         used_colors = set()
 
         for neighbor in graph[node]:
