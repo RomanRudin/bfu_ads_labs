@@ -1,1 +1,1 @@
-The job isn't verified
+The job is verified

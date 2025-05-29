@@ -73,8 +73,6 @@ class Triangle:
                 self.bbox[2] >= other.bbox[2] and
                 self.bbox[3] >= other.bbox[3]):
             return False
-
-        # Затем точная проверка всех точек
         return all(self.contains_point(p) for p in other.points)
 
     def __repr__(self):
@@ -150,7 +148,7 @@ def main():
             plt.grid(True)
             plt.show()
         except ImportError:
-            print("Для визуализации установите matplotlib: pip install matplotlib")
+            print("matplotlib не найден")
     else:
         print("\nВложенные треугольники не найдены.")
 
