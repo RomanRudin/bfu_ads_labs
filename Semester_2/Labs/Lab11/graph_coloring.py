@@ -56,3 +56,6 @@ if __name__ == "__main__":
         k, coloring = find_min_colors(graph)
         print(f"Минимальное количество цветов: {k}")
         print(f"Раскраска вершин: {coloring}")
+        # Цвет 1 - красный
+        # Цвет 2 - Зелёный
+        # Цвет 3 - синий
