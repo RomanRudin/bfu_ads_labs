@@ -20,9 +20,7 @@ def can_color(graph, k) -> Optional[dict]:
     return backtrack(0)
 
 def find_min_colors(graph) -> tuple[Literal[0], dict] | tuple[int, dict]:
-    if not graph:
-        raise ValueError("Graph is empty!")
-    max_degree = max(len(adj) for adj in graph.values())
+    max_degree = max(len(node) for node in graph.values())
     for k in range(1, max_degree + 2):
         coloring = can_color(graph, k)
         if coloring is not None:
@@ -43,6 +41,16 @@ if __name__ == "__main__":
         1: [0, 2, 3],  
         2: [0, 1, 3],  
         3: [1, 2]       
+    },
+    {
+        0: [1, 4, 5],
+        1: [0, 2, 3, 7],
+        2: [1, 3, 7],
+        3: [1, 2, 4, 6],
+        4: [0, 3, 5, 6],
+        5: [0, 4, 6],
+        6: [3, 4, 5, 7],
+        7: [1, 2, 6]
     }]
     for graph in graphS:
         k, coloring = find_min_colors(graph)
