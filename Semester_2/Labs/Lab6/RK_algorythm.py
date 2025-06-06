@@ -1,11 +1,31 @@
-def rk_algorythm(text: str, pattern: str) -> list[int]:
+def rk_algorithm(text: str, pattern: str, base: int = 256, prime: int = 101) -> list[int]:
+    n = len(text)
+    m = len(pattern)
     result = []
-    patternHash = hash(pattern) #? Python internal hash() function has a constant complexity
-
-    for i in range(len(text) - len(pattern) + 1):
-        textHash = hash(text[i:(len(pattern) + i)])
-        if ((patternHash == textHash) and all([pattern[j] == text[i + j] for j in range(len(pattern))])):
-            result.append(i)
+    
+    if m == 0 or n < m:
+        return result
+    
+    h = 1
+    for _ in range(m-1):
+        h = (h * base) % prime
+    
+    pattern_hash = 0
+    window_hash = 0
+    for i in range(m):
+        pattern_hash = (base * pattern_hash + ord(pattern[i])) % prime
+        window_hash = (base * window_hash + ord(text[i])) % prime
+    
+    for i in range(n - m + 1):
+        if pattern_hash == window_hash:
+            if pattern == text[i:i+m]:
+                result.append(i)
+        
+        if i < n - m:
+            window_hash = (base * (window_hash - ord(text[i]) * h) + ord(text[i+m])) % prime
+            if window_hash < 0:
+                window_hash += prime
+    
     return result
 
 if __name__ == "__main__":
@@ -13,5 +33,3 @@ if __name__ == "__main__":
     print(f"Result of rk_algorythm: {rk_algorythm('abcababdabaaba', 'abaaba')}")
     print(f"Result of rk_algorythm: {rk_algorythm('abcababdabaab', 'abaaba')}")
     print(f"Result of rk_algorythm: {rk_algorythm('abcababdabaab', 'ab')}")
-
-#TODO Движение окна на 1 символ, хэширование своё
