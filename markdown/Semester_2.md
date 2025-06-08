@@ -39,7 +39,7 @@
 8. [x] [Проблема размена монет](/Semester_2/Labs/Lab8/coin_exchange.py)
 9. [ ] [Задача коммивояжера](/Semester_2/Labs/Lab9/travelling_salesman.py)
 10. [x] [Задача о бросании яиц](/Semester_2/Labs/Lab10/egg_drop.py)
-11. [ ] [задача о раскраске графа](/Semester_2/Labs/Lab11/graph_painting.py)
+11. [x] [Задача о раскраске графа](/Semester_2/Labs/Lab11/graph_painting.py)
 12. [x] [Дискретная задача о рюкзаке](/Semester_2/Labs/Lab12/backpack.py) 
 13. [x] [Задача о раскладке по ящикам](/Semester_2/Labs/Lab13/boxes.py)
 
