@@ -4,6 +4,7 @@
 - [Список выполненных лаб](#Labs-done)
 - - [Python](#Labs-done-python)
 - - [C++](#Labs-done-c++)
+- - [Golang](#Labs-done-golang)
 - [Тексты лаб](#Labs-text)
 - [Условия автомата](#Automatic-mark-conditions)
 - [Объяснения лаб](#Explanation-labs)
@@ -63,6 +64,25 @@
 12. [ ] [Дискретная задача о рюкзаке]()
 13. [ ] [Задача о раскладке по ящикам]()
 
+
+<a name="Labs-done-golang">
+
+### Golang <img src="https://github.com/devicons/devicon/blob/master/icons/go/go-original.svg"  title="golang" alt="golang" width="40" height="40"/>&nbsp;
+</a>
+
+1. [x] [Алгоритм проверки точек на выпуклый многоугольник](/Semester_2/Lab1/main.go)
+2. [ ] [Алгоритм проверки точек на вершины вложенных треугольников]()
+3. [x] [Алгоритм поиска по образцу с помощью конечного автомата](/Semester_2/Lab3/main.go)
+4. [x] [Алгоритм Кнута-Морриса-Пратта для поиска по образ](/Semester_2/Lab4/main.go)
+5. [x] [Алгоритм Бойера-Мура для поиска по образцу](/Semester_2/Lab5/main.go)
+6. [x] [Алгоритм Рабина для поиска по образцу](/Semester_2/Lab6/main.go)
+7. [x] [Задача о самом большом подмассиве](/Semester_2/Lab7/main.go)
+8. [x] [Проблема размена монет](/Semester_2/Lab8/main.go)
+9. [ ] [Задача коммивояжера]()
+10. [x] [Задача о бросании яиц](/Semester_2/Lab10/main.go)
+11. [ ] [задача о раскраске графа]()
+12. [ ] [Дискретная задача о рюкзаке]()
+13. [ ] [Задача о раскладке по ящикам]()
 
 
 
