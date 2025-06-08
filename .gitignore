@@ -1,4 +1,40 @@
+#? Python
 **/ADS_Labs
 **/.vscode
 **/__pycache__
 binary_tree_reader.py
+
+#? Golang
+# Prerequisites
+*.d
+
+*.exe
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.out
+*.app

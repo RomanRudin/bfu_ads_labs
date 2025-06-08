@@ -4,6 +4,7 @@
 - [Список выполненных лаб](#Labs-done)
 - - [Python](#Labs-done-python)
 - - [C++](#Labs-done-c++)
+- - [Golang](#Labs-done-golang)
 - [Тексты лаб](#Labs-text)
 - [Условия автомата](#Automatic-mark-conditions)
 - [Объяснения лаб](#Explanation-labs)
@@ -30,18 +31,18 @@
 </a>
 
 1. [x] [Алгоритм проверки точек на выпуклый многоугольник](#lab-1-explanation)
-2. [x] [Алгоритм проверки точек на вершины вложенных треугольников](/Semester_2/Labs/Lab2/lab2.py)
-3. [x] [Алгоритм поиска по образцу с помощью конечного автомата](/Semester_2/Labs/Lab3/Finite_automata_patter_searching_algorythm.py)
-4. [x] [Алгоритм Кнута-Морриса-Пратта для поиска по образ](/Semester_2/Labs/Lab4/KMP_algorythm.py)
-5. [x] [Алгоритм Бойера-Мура для поиска по образцу](/Semester_2/Labs/Lab5/BM_algorythm_bad_character.py)
-6. [x] [Алгоритм Рабина для поиска по образцу](/Semester_2/Labs/Lab6/RK_algorythm.py) 
-7. [x] [Задача о самом большом подмассиве](/Semester_2/Labs/Lab7/the_largest_subarray.py)
-8. [x] [Проблема размена монет](/Semester_2/Labs/Lab8/coin_exchange.py)
-9. [x] [Задача коммивояжера](/Semester_2/Labs/Lab9/travelling_salesman.py)
-10. [x] [Задача о бросании яиц](/Semester_2/Labs/Lab10/egg_drop.py)
-11. [x] [Задача о раскраске графа](/Semester_2/Labs/Lab11/graph_painting.py)
-12. [x] [Дискретная задача о рюкзаке](/Semester_2/Labs/Lab12/backpack.py) 
-13. [x] [Задача о раскладке по ящикам](/Semester_2/Labs/Lab13/boxes.py)
+2. [x] [Алгоритм проверки точек на вершины вложенных треугольников](/Semester_2/Lab2/lab2.py)
+3. [x] [Алгоритм поиска по образцу с помощью конечного автомата](/Semester_2/Lab3/Finite_automata_patter_searching_algorythm.py)
+4. [x] [Алгоритм Кнута-Морриса-Пратта для поиска по образ](/Semester_2/Lab4/KMP_algorythm.py)
+5. [x] [Алгоритм Бойера-Мура для поиска по образцу](/Semester_2/Lab5/BM_algorythm_bad_character.py)
+6. [x] [Алгоритм Рабина для поиска по образцу](/Semester_2/Lab6/RK_algorythm.py) 
+7. [x] [Задача о самом большом подмассиве](/Semester_2/Lab7/the_largest_subarray.py)
+8. [x] [Проблема размена монет](/Semester_2/Lab8/coin_exchange.py)
+9. [x] [Задача коммивояжера](/Semester_2/Lab9/travelling_salesman.py)
+10. [x] [Задача о бросании яиц](/Semester_2/Lab10/egg_drop.py)
+11. [x] [Задача о раскраске графа](/Semester_2/Lab11/graph_painting.py)
+12. [x] [Дискретная задача о рюкзаке](/Semester_2/Lab12/backpack.py) 
+13. [x] [Задача о раскладке по ящикам](/Semester_2/Lab13/boxes.py)
 
 
 <a name="Labs-done-c++">
@@ -63,6 +64,25 @@
 12. [ ] [Дискретная задача о рюкзаке]()
 13. [ ] [Задача о раскладке по ящикам]()
 
+
+<a name="Labs-done-golang">
+
+### Golang <img src="https://github.com/devicons/devicon/blob/master/icons/go/go-original.svg"  title="golang" alt="golang" width="40" height="40"/>&nbsp;
+</a>
+
+1. [x] [Алгоритм проверки точек на выпуклый многоугольник](/Semester_2/Lab1/main.go)
+2. [ ] [Алгоритм проверки точек на вершины вложенных треугольников]()
+3. [x] [Алгоритм поиска по образцу с помощью конечного автомата](/Semester_2/Lab3/main.go)
+4. [x] [Алгоритм Кнута-Морриса-Пратта для поиска по образ](/Semester_2/Lab4/main.go)
+5. [x] [Алгоритм Бойера-Мура для поиска по образцу](/Semester_2/Lab5/main.go)
+6. [x] [Алгоритм Рабина для поиска по образцу](/Semester_2/Lab6/main.go)
+7. [x] [Задача о самом большом подмассиве](/Semester_2/Lab7/main.go)
+8. [x] [Проблема размена монет](/Semester_2/Lab8/main.go)
+9. [ ] [Задача коммивояжера]()
+10. [x] [Задача о бросании яиц](/Semester_2/Lab10/main.go)
+11. [ ] [задача о раскраске графа]()
+12. [ ] [Дискретная задача о рюкзаке]()
+13. [ ] [Задача о раскладке по ящикам]()
 
 
 
@@ -162,7 +182,7 @@
 
 ### Нахождение выпуклой оболочки множества точек
 
-1. [Стандартное решение Python](/Semester_2/Labs/Lab1/Grahams_algorythm.py), [решение Python с визуализацией через matplotlib](/Semester_2/Labs/Lab1/Grahams_algorythm_with_visualisation.py)
+1. [Стандартное решение Python](/Semester_2/Lab1/Grahams_algorythm.py), [решение Python с визуализацией через matplotlib](/Semester_2/Lab1/Grahams_algorythm_with_visualisation.py)
 
 [Почитать про алгоритм](https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%93%D1%80%D1%8D%D1%85%D0%B5%D0%BC%D0%B0#:~:text=%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%20%D0%93%D1%80%D1%8D%D1%85%D0%B5%D0%BC%D0%B0%20%E2%80%94%20%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%20%D0%BF%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B5%D0%BD%D0%B8%D1%8F,%D0%B8%D1%85%20%D0%BE%D0%B1%D1%85%D0%BE%D0%B4%D0%B0%20%D0%BF%D1%80%D0%BE%D1%82%D0%B8%D0%B2%20%D1%87%D0%B0%D1%81%D0%BE%D0%B2%D0%BE%D0%B9%20%D1%81%D1%82%D1%80%D0%B5%D0%BB%D0%BA%D0%B8)
 
