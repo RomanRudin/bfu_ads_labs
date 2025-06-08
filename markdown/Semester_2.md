@@ -31,13 +31,13 @@
 
 1. [x] [Алгоритм проверки точек на выпуклый многоугольник](#lab-1-explanation)
 2. [x] [Алгоритм проверки точек на вершины вложенных треугольников](/Semester_2/Labs/Lab2/lab2.py)
-3. [ ] [Алгоритм поиска по образцу с помощью конечного автомата](/Semester_2/Labs/Lab3/Finite_automata_patter_searching_algorythm.py)
+3. [x] [Алгоритм поиска по образцу с помощью конечного автомата](/Semester_2/Labs/Lab3/Finite_automata_patter_searching_algorythm.py)
 4. [x] [Алгоритм Кнута-Морриса-Пратта для поиска по образ](/Semester_2/Labs/Lab4/KMP_algorythm.py)
 5. [x] [Алгоритм Бойера-Мура для поиска по образцу](/Semester_2/Labs/Lab5/BM_algorythm_bad_character.py)
 6. [x] [Алгоритм Рабина для поиска по образцу](/Semester_2/Labs/Lab6/RK_algorythm.py) 
 7. [x] [Задача о самом большом подмассиве](/Semester_2/Labs/Lab7/the_largest_subarray.py)
 8. [x] [Проблема размена монет](/Semester_2/Labs/Lab8/coin_exchange.py)
-9. [ ] [Задача коммивояжера](/Semester_2/Labs/Lab9/travelling_salesman.py)
+9. [x] [Задача коммивояжера](/Semester_2/Labs/Lab9/travelling_salesman.py)
 10. [x] [Задача о бросании яиц](/Semester_2/Labs/Lab10/egg_drop.py)
 11. [x] [Задача о раскраске графа](/Semester_2/Labs/Lab11/graph_painting.py)
 12. [x] [Дискретная задача о рюкзаке](/Semester_2/Labs/Lab12/backpack.py) 
@@ -166,12 +166,12 @@
 
 [Почитать про алгоритм](https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%93%D1%80%D1%8D%D1%85%D0%B5%D0%BC%D0%B0#:~:text=%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%20%D0%93%D1%80%D1%8D%D1%85%D0%B5%D0%BC%D0%B0%20%E2%80%94%20%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%20%D0%BF%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B5%D0%BD%D0%B8%D1%8F,%D0%B8%D1%85%20%D0%BE%D0%B1%D1%85%D0%BE%D0%B4%D0%B0%20%D0%BF%D1%80%D0%BE%D1%82%D0%B8%D0%B2%20%D1%87%D0%B0%D1%81%D0%BE%D0%B2%D0%BE%D0%B9%20%D1%81%D1%82%D1%80%D0%B5%D0%BB%D0%BA%D0%B8)
 
-2. 
+2. Ты думал, здесь что-то будет?
 
 
 ### Поиск по образцу
 
-3.  <!-- https://translated.turbopages.org/proxy_u/en-ru.ru.59cc7ff6-6787f565-c87772e8-74722d776562/https/www.geeksforgeeks.org/finite-automata-algorithm-for-pattern-searching/ -->
+3.  https://translated.turbopages.org/proxy_u/en-ru.ru.59cc7ff6-6787f565-c87772e8-74722d776562/https/www.geeksforgeeks.org/finite-automata-algorithm-for-pattern-searching/
 
 4. [Читаем посложнее](https://habr.com/ru/articles/307220/), [Читаем попроще](https://habr.com/ru/articles/658779/)
 
@@ -182,22 +182,22 @@
 
 ### Динамическое программирование
 
-7. <!-- https://proglib.io/p/25-algoritmov-dinamicheskogo-programmirovaniya-kotorye-dolzhen-znat-kazhdyy-programmist-2023-05-30 -->
+7. https://proglib.io/p/25-algoritmov-dinamicheskogo-programmirovaniya-kotorye-dolzhen-znat-kazhdyy-programmist-2023-05-30 
 
-8. 
+8. Ты думал, здесь что-то будет?
 
-9. 
+9. Ты думал, здесь что-то будет?
 
-10. 
+10. Ты думал, здесь что-то будет?
 
 
 ### NP-полные задачи
 
-11. <!-- https://publications.hse.ru/pubs/share/folder/0rhqzr8ukk/133671897.pdf -->
+11. https://publications.hse.ru/pubs/share/folder/0rhqzr8ukk/133671897.pdf
 
-12. 
+12. Ты думал, здесь что-то будет?
 
-13. 
+13. Ты думал, здесь что-то будет?
  
 
 
@@ -208,4 +208,4 @@
 # Презентации от преподавателя за семестр
 </a>
 
-- []()
+- [А ИХ НЕТ ПОТОМУ ЧТО БЛИН]()
