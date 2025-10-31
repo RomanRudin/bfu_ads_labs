@@ -8,6 +8,8 @@ Language was changed to Russian.
  - [Первый семестр](/markdown/Semester_1.md)
  - [Второй семестр](/markdown/Semester_2.md)
 
+ - [Тест для первого семестра](/markdown/test_1.md)
+
 
 
 
