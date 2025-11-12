@@ -70,6 +70,7 @@
 ### Golang <img src="https://github.com/devicons/devicon/blob/master/icons/go/go-original.svg"  title="golang" alt="golang" width="40" height="40"/>&nbsp;
 </a>
 
+Спасибо [choipopik](https://github.com/choipopik)
 1. [x] [Алгоритм проверки точек на выпуклый многоугольник](/Semester_2/Lab1/main.go)
 2. [ ] [Алгоритм проверки точек на вершины вложенных треугольников]()
 3. [x] [Алгоритм поиска по образцу с помощью конечного автомата](/Semester_2/Lab3/main.go)
