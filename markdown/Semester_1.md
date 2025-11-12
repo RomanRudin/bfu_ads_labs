@@ -4,6 +4,7 @@
 - [Список выполненных лаб](#Labs-done)
 - - [Python](#Labs-done-python)
 - - [C++](#Labs-done-c++)
+- - [C#](#Labs-done-cs)
 - [Тексты лаб](#Labs-text)
 - [Объяснения лаб](#Explanation-labs)
 - [Презентации от препода](#Presentations)
@@ -51,9 +52,9 @@
 ### C++ <img src="https://github.com/devicons/devicon/blob/master/icons/cplusplus/cplusplus-original.svg"  title="C++" alt="C++" width="40" height="40"/>&nbsp;
 </a>
 
-1. [x] ["Задача о скобках"](/Semester_1/Labs/Lab2/lab_1.cpp)
-2. [x] ["Задача об арифметическом выражении"](/Semester_1/Labs/Lab2/lab_2.cpp) (Спасибо [choipopik](https://github.com/choipopik))
-3. [x] ["Задача о простых множителях"](/Semester_1/Labs/Lab3/lab_3.cpp)
+1. [x] ["Задача о скобках"](/Semester_1/Labs/Lab2/1.cpp)
+2. [x] ["Задача об арифметическом выражении"](/Semester_1/Labs/Lab2/Reversed_polish_notation.cpp) (Спасибо [choipopik](https://github.com/choipopik))
+3. [x] ["Задача о простых множителях"](/Semester_1/Labs/Lab3/3.cpp)
 4. [x] [Comb sort (Сортировка методом прочесывания)](/Semester_1/Labs/Lab4/сomb_sort.cpp)
 5. [x] [Insertion sort (Сортировка вставками)](/Semester_1/Labs/Lab5/insertion_sort.cpp)
 6. [x] [Selection sort (Сортировка выбором)](/Semester_1/Labs/Lab6/selection_sort.cpp)
@@ -65,9 +66,34 @@
 12. [x] [External multiphase merge sort (Внешняя многофазная сортировка слиянием)](/Semester_1/Labs/Lab12/external_multiphase_sort.cpp)
 13. [x] [Хэш-табоица с открытой адресацией](#lab-13-explanation)
 14. [x] [Хэш-табоица со списками](#lab-14-explanation)
-15. [x] [Рекурсивные обходы (прямой, центральный, концевой)](/Semester_1/Labs/Lab15/5.cpp)
+15. [x] [Рекурсивные обходы (прямой, центральный, концевой)](/Semester_1/Labs/Lab15/15.cpp)
 16. [x] [Не рекурсивный прямой обход](/Semester_1/Labs/Lab16/16.cpp)
 17. [x] [Операции над БНП: поиск, добавление, удаление](/Semester_1/Labs/Lab17/17.cpp)
+
+
+<a name="Labs-done-c#">
+
+### C# <img src="https://github.com/devicons/devicon/blob/master/icons/csharp/csharp-original.svg"  title="C#" alt="C#" width="40" height="40"/>&nbsp;
+</a>
+
+Спасибо [maksiorek9](https://github.com/maksiorek9)
+1. [x] ["Задача о скобках"](/Semester_1/Labs/Lab2/lab1.cs)
+2. [x] ["Задача об арифметическом выражении"](/Semester_1/Labs/Lab2/lab2.cs))
+3. [x] ["Задача о простых множителях"](/Semester_1/Labs/Lab3/lab3.cs)
+4. [x] [Comb sort (Сортировка методом прочесывания)](/Semester_1/Labs/Lab4/сomb_sort.cs)
+5. [x] [Insertion sort (Сортировка вставками)](/Semester_1/Labs/Lab5/insertion_sort.cs)
+6. [x] [Selection sort (Сортировка выбором)](/Semester_1/Labs/Lab6/selection_sort.cs)
+7. [x] [Shell sort (Сортировка Шелла)](/Semester_1/Labs/Lab7/shell_sort.cs)
+8. [x] [Radix sort (Поразрядная сортировка)](/Semester_1/Labs/Lab8/radix_sort.cs)
+9. [x] [Heap sort (Сортировка пирамидальная)](/Semester_1/Labs/Lab9/heap_sort.cs)
+10. [x] [Merge sort (Сортировка слиянием)](/Semester_1/Labs/Lab10/merge_sort.cs)
+11. [x] [QSort (Быстрая сортировка)](/Semester_1/Labs/Lab11/quick_sort.cs)
+12. [x] [External multiphase merge sort (Внешняя многофазная сортировка слиянием)](/Semester_1/Labs/Lab12/external_multiphase_sort.cs)
+13. [x] [Хэш-табоица с открытой адресацией](/Semester_1/Labs/Lab13/lab13.cs)
+14. [x] [Хэш-табоица со списками](/Semester_1/Labs/Lab14/lab14.cs)
+15. [x] [Рекурсивные обходы (прямой, центральный, концевой)](/Semester_1/Labs/Lab15/lab15.cs)
+16. [x] [Не рекурсивный прямой обход](/Semester_1/Labs/Lab16/lab16.cs)
+17. [x] [Операции над БНП: поиск, добавление, удаление](/Semester_1/Labs/Lab17/lab17.cs)
 
 
 
